@@ -28,10 +28,10 @@ export function Navbar() {
           </Link>
         </div>
         
-        <div className="flex lg:hidden">
+        <div className="flex md:hidden">
           <Button
             variant="ghost"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-foreground"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
@@ -39,7 +39,7 @@ export function Navbar() {
           </Button>
         </div>
         
-        <div className="hidden lg:flex lg:gap-x-8">
+        <div className="hidden md:flex md:gap-x-8">
           {navigation.map((item) => (
             <Link
               key={item.name}
@@ -55,7 +55,7 @@ export function Navbar() {
           ))}
         </div>
         
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="hidden md:flex md:flex-1 md:justify-end">
           <Button asChild className="gradient-accent">
             <Link to="/contact">Get Started</Link>
           </Button>
@@ -63,7 +63,7 @@ export function Navbar() {
       </nav>
 
       {/* Mobile menu */}
-      <div className={`lg:hidden ${mobileMenuOpen ? 'fixed inset-0 z-50' : 'hidden'}`}>
+      <div className={`md:hidden ${mobileMenuOpen ? 'fixed inset-0 z-50' : 'hidden'}`}>
         <div className="fixed inset-0 bg-background/80 backdrop-blur-sm" onClick={() => setMobileMenuOpen(false)} />
         <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-card px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-border animate-slide-in-right">
           <div className="flex items-center justify-between">
