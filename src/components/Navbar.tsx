@@ -65,7 +65,7 @@ export function Navbar() {
       {/* Mobile menu */}
       <div className={`md:hidden ${mobileMenuOpen ? 'fixed inset-0 z-50' : 'hidden'}`}>
         <div className="fixed inset-0 bg-background/80 backdrop-blur-sm" onClick={() => setMobileMenuOpen(false)} />
-        <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-card px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-border animate-slide-in-right">
+        <div className="fixed inset-y-0 right-0 z-50 w-full sm:max-w-sm overflow-hidden bg-card text-card-foreground px-6 py-6 ring-1 ring-border animate-slide-in-right flex flex-col shadow-xl">
           <div className="flex items-center justify-between">
             <Link to="/" className="-m-1.5 p-1.5 flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
               <GraduationCap className="h-8 w-8 text-primary" />
@@ -80,14 +80,14 @@ export function Navbar() {
               <X className="h-6 w-6" aria-hidden="true" />
             </Button>
           </div>
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-border">
-              <div className="space-y-2 py-6">
-                {navigation.map((item) => (
+
+          <nav className="mt-6 flex-1 overflow-y-auto">
+            <ul className="space-y-1">
+              {navigation.map((item) => (
+                <li key={item.name}>
                   <Link
-                    key={item.name}
                     to={item.href}
-                    className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 transition-smooth ${
+                    className={`block rounded-lg px-3 py-3 text-base font-semibold leading-7 transition-smooth ${
                       isActive(item.href)
                         ? 'bg-accent text-accent-foreground'
                         : 'text-foreground hover:bg-secondary'
@@ -96,16 +96,17 @@ export function Navbar() {
                   >
                     {item.name}
                   </Link>
-                ))}
-              </div>
-              <div className="py-6">
-                <Button asChild className="w-full gradient-accent">
-                  <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
-                    Get Started
-                  </Link>
-                </Button>
-              </div>
-            </div>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div className="pt-4 border-t border-border">
+            <Button asChild className="w-full gradient-accent">
+              <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
+                Get Started
+              </Link>
+            </Button>
           </div>
         </div>
       </div>
