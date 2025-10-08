@@ -5,6 +5,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import { toast } from 'sonner';
+import Map from '@/components/Map';
 
 export default function Contact() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -174,12 +175,8 @@ export default function Contact() {
       <section className="py-16 bg-secondary">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="rounded-2xl overflow-hidden shadow-elevated">
-            <div className="aspect-[21/9] bg-muted flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="h-12 w-12 text-accent mx-auto mb-4" />
-                <p className="text-muted-foreground">Interactive map would be displayed here</p>
-                <p className="text-sm text-muted-foreground mt-2">IIT Bombay, Powai, Mumbai</p>
-              </div>
+            <div className="h-[500px]">
+              <Map />
             </div>
           </div>
         </div>
