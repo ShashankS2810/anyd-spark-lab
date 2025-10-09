@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, GraduationCap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -63,53 +64,61 @@ export function Navbar() {
       </nav>
 
       {/* Mobile menu */}
-      <div className={`md:hidden ${mobileMenuOpen ? 'fixed inset-0 z-50' : 'hidden'}`}>
-        <div className="fixed inset-0 bg-background/80 backdrop-blur-sm" onClick={() => setMobileMenuOpen(false)} />
-        <div className="fixed inset-y-0 right-0 z-50 w-full sm:max-w-sm overflow-hidden bg-card text-card-foreground px-6 py-6 ring-1 ring-border animate-slide-in-right flex flex-col shadow-xl">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="-m-1.5 p-1.5 flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
-              <GraduationCap className="h-8 w-8 text-primary" />
-              <span className="text-xl font-bold text-primary">AnyD Materials</span>
-            </Link>
-            <Button
-              variant="ghost"
-              className="-m-2.5 rounded-md p-2.5"
+      {mobileMenuOpen &&
+        createPortal(
+          <div className="fixed inset-0 z-[60] md:hidden" role="dialog" aria-modal="true">
+            <div
+              className="absolute inset-0 bg-background/80 backdrop-blur-sm"
               onClick={() => setMobileMenuOpen(false)}
-            >
-              <span className="sr-only">Close menu</span>
-              <X className="h-6 w-6" aria-hidden="true" />
-            </Button>
-          </div>
+            />
+            <div className="absolute inset-y-0 right-0 w-full sm:max-w-sm overflow-hidden bg-card text-card-foreground px-6 py-6 ring-1 ring-border animate-slide-in-right flex flex-col shadow-xl">
+              <div className="flex items-center justify-between">
+                <Link to="/" className="-m-1.5 p-1.5 flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
+                  <GraduationCap className="h-8 w-8 text-primary" />
+                  <span className="text-xl font-bold text-primary">AnyD Materials</span>
+                </Link>
+                <Button
+                  variant="ghost"
+                  className="-m-2.5 rounded-md p-2.5"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="sr-only">Close menu</span>
+                  <X className="h-6 w-6" aria-hidden="true" />
+                </Button>
+              </div>
 
-          <nav className="mt-6 flex-1 overflow-y-auto">
-            <ul className="space-y-1">
-              {navigation.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    to={item.href}
-                    className={`block rounded-lg px-3 py-3 text-base font-semibold leading-7 transition-smooth ${
-                      isActive(item.href)
-                        ? 'bg-accent text-accent-foreground'
-                        : 'text-foreground hover:bg-secondary'
-                    }`}
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.name}
+              <nav className="mt-6 flex-1 overflow-y-auto">
+                <ul className="space-y-1">
+                  {navigation.map((item) => (
+                    <li key={item.name}>
+                      <Link
+                        to={item.href}
+                        className={`block rounded-lg px-3 py-3 text-base font-semibold leading-7 transition-smooth ${
+                          isActive(item.href)
+                            ? 'bg-accent text-accent-foreground'
+                            : 'text-foreground hover:bg-secondary'
+                        }`}
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+
+              <div className="pt-4 border-t border-border">
+                <Button asChild className="w-full gradient-accent">
+                  <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
+                    Get Started
                   </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+                </Button>
+              </div>
+            </div>
+          </div>,
+          document.body
+        )}
 
-          <div className="pt-4 border-t border-border">
-            <Button asChild className="w-full gradient-accent">
-              <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
-                Get Started
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </div>
     </header>
   );
 }
