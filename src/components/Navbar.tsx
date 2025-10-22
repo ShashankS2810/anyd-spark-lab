@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, GraduationCap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import anydLogo from '@/assets/anyd-logo.png';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -23,9 +24,8 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <Link to="/" className="-m-1.5 p-1.5 flex items-center gap-2 group">
-            <GraduationCap className="h-8 w-8 text-primary transition-smooth group-hover:text-accent" />
-            <span className="text-xl font-bold text-primary">AnyD Materials</span>
+          <Link to="/" className="-m-1.5 p-1.5 flex items-center group">
+            <img src={anydLogo} alt="AnyD Materials Logo" className="h-10 transition-smooth group-hover:opacity-80" />
           </Link>
         </div>
         
@@ -73,9 +73,8 @@ export function Navbar() {
             />
             <div className="absolute inset-y-0 right-0 w-full sm:max-w-sm overflow-hidden bg-card text-card-foreground px-6 py-6 ring-1 ring-border animate-slide-in-right flex flex-col shadow-xl">
               <div className="flex items-center justify-between">
-                <Link to="/" className="-m-1.5 p-1.5 flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
-                  <GraduationCap className="h-8 w-8 text-primary" />
-                  <span className="text-xl font-bold text-primary">AnyD Materials</span>
+                <Link to="/" className="-m-1.5 p-1.5 flex items-center" onClick={() => setMobileMenuOpen(false)}>
+                  <img src={anydLogo} alt="AnyD Materials Logo" className="h-10" />
                 </Link>
                 <Button
                   variant="ghost"

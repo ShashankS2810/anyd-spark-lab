@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { GraduationCap, Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
+import anydLogo from '@/assets/anyd-logo.png';
 
 const navigation = {
   main: [
@@ -18,9 +19,8 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {/* Brand */}
           <div>
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <GraduationCap className="h-8 w-8 text-primary" />
-              <span className="text-xl font-bold text-primary">AnyD Materials</span>
+            <Link to="/" className="inline-block mb-4">
+              <img src={anydLogo} alt="AnyD Materials Logo" className="h-12" />
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
               Empowering the next generation through innovative STEM education. Associated with IIT Bombay.
