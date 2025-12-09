@@ -25,7 +25,7 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5 flex items-center group">
-            <img src={anydLogo} alt="AnyD Materials Logo" width="924" height="362" className="h-10 transition-smooth group-hover:opacity-80" />
+            <img src={anydLogo} alt="AnyD Materials Logo" width="924" height="362" className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto transition-smooth group-hover:opacity-80" />
           </Link>
         </div>
         
@@ -74,7 +74,7 @@ export function Navbar() {
             <div className="absolute inset-y-0 right-0 w-full sm:max-w-sm overflow-hidden bg-card text-card-foreground px-6 py-6 ring-1 ring-border animate-slide-in-right flex flex-col shadow-xl">
               <div className="flex items-center justify-between">
                 <Link to="/" className="-m-1.5 p-1.5 flex items-center" onClick={() => setMobileMenuOpen(false)}>
-                  <img src={anydLogo} alt="AnyD Materials Logo" width="924" height="362" className="h-10" />
+                  <img src={anydLogo} alt="AnyD Materials Logo" width="924" height="362" className="h-10 w-auto" />
                 </Link>
                 <Button
                   variant="ghost"
