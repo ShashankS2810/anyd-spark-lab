@@ -20,7 +20,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <Link to="/" className="inline-block mb-4">
-              <img src={anydLogo} alt="AnyD Materials Logo" width="924" height="362" className="h-10 sm:h-12 md:h-14 w-auto" />
+              <img src={anydLogo} alt="AnyD Materials Logo" width="924" height="362" className="h-14 sm:h-16 md:h-20 w-auto" />
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
               Empowering the next generation through innovative STEM education. Associated with IIT Bombay.
