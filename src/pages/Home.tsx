@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { BookOpen, Rocket, Users, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import PromoPopup from '@/components/PromoPopup';
 
 const features = [
   {
@@ -37,6 +38,7 @@ const stats = [
 export default function Home() {
   return (
     <div className="flex flex-col">
+      <PromoPopup />
       <Hero />
 
       {/* Stats Section */}
