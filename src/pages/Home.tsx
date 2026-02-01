@@ -60,52 +60,20 @@ const values = [
 
 const programs = [
   {
-    title: 'Junior Scientists Program',
-    description: 'An introductory program for elementary students (Grades 1-5) designed to spark curiosity about the natural world through fun experiments and activities.',
-    duration: '8 weeks',
+    title: 'Basic Level Session',
+    description: 'Short, beginner-friendly session that focuses mainly on using and understanding the kits provided. Ideal for kids who are starting their STEM learning journey.',
+    duration: '45–60 minutes',
     level: 'Beginner',
-    students: '15-20',
-    highlights: ['Hands-on experiments', 'Interactive learning', 'Science fair preparation'],
+    icon: Rocket,
+    highlights: ['Kit-based learning', 'Fun experiments', 'Perfect for beginners'],
   },
   {
-    title: 'Young Engineers Club',
-    description: 'Middle school program (Grades 6-8) focusing on engineering principles, robotics, and design thinking to build problem-solving skills.',
-    duration: '12 weeks',
-    level: 'Intermediate',
-    students: '12-15',
-    highlights: ['Robotics basics', 'Design projects', 'Team collaboration'],
-  },
-  {
-    title: 'Advanced STEM Academy',
-    description: 'Rigorous program for high school students (Grades 9-12) covering advanced topics in physics, chemistry, mathematics, and computer science.',
-    duration: '16 weeks',
+    title: 'Advanced Level Session',
+    description: 'Covers advanced STEM concepts and helps students build advanced projects with hands-on, deeper learning experiences.',
+    duration: 'Around 2 hours',
     level: 'Advanced',
-    students: '10-12',
-    highlights: ['College-level content', 'Research projects', 'Olympiad preparation'],
-  },
-  {
-    title: 'Coding & AI Bootcamp',
-    description: 'Intensive program teaching programming fundamentals, artificial intelligence, and machine learning concepts for students aged 12+.',
-    duration: '10 weeks',
-    level: 'Intermediate',
-    students: '15-18',
-    highlights: ['Python programming', 'AI basics', 'Real-world projects'],
-  },
-  {
-    title: 'Science Competition Prep',
-    description: 'Specialized coaching for students preparing for national and international science competitions and olympiads.',
-    duration: '6 months',
-    level: 'Advanced',
-    students: '8-10',
-    highlights: ['Olympiad training', 'Mock competitions', 'Expert mentoring'],
-  },
-  {
-    title: 'Summer STEM Camp',
-    description: 'Intensive summer program offering a mix of science experiments, technology projects, and field trips for students of all ages.',
-    duration: '4 weeks',
-    level: 'All Levels',
-    students: '25-30',
-    highlights: ['Outdoor activities', 'Lab visits', 'Guest lectures'],
+    icon: BookOpen,
+    highlights: ['Advanced concepts', 'Project building', 'Hands-on learning'],
   },
 ];
 
@@ -230,43 +198,38 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 max-w-4xl mx-auto">
             {programs.map((program, index) => (
-              <Card key={program.title} className="flex flex-col shadow-card transition-smooth hover:shadow-elevated hover:-translate-y-1 animate-scale-in" style={{ animationDelay: `${index * 100}ms` }}>
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
-                    <Badge variant="secondary">{program.level}</Badge>
+              <Card key={program.title} className="flex flex-col shadow-card transition-smooth hover:shadow-elevated hover:-translate-y-1 animate-scale-in overflow-hidden" style={{ animationDelay: `${index * 100}ms` }}>
+                <div className="bg-accent/10 p-6 flex items-center justify-center">
+                  <div className="h-20 w-20 rounded-full bg-accent/20 flex items-center justify-center">
+                    <program.icon className="h-10 w-10 text-accent" />
                   </div>
+                </div>
+                <CardHeader className="text-center">
+                  <Badge variant="secondary" className="w-fit mx-auto mb-2">{program.level}</Badge>
                   <CardTitle className="text-2xl mb-2">{program.title}</CardTitle>
                   <CardDescription className="text-base">{program.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1">
-                  <div className="space-y-3 mb-4">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Clock className="h-4 w-4 text-accent" />
-                      <span>Duration: {program.duration}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Users className="h-4 w-4 text-accent" />
-                      <span>Class Size: {program.students} students</span>
-                    </div>
+                  <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-4">
+                    <Clock className="h-4 w-4 text-accent" />
+                    <span>Duration: {program.duration}</span>
                   </div>
                   <div className="space-y-2">
-                    <div className="flex items-start gap-2">
-                      <Award className="h-4 w-4 text-accent mt-1" />
-                      <div>
-                        <p className="text-sm font-medium mb-1">Program Highlights:</p>
-                        <ul className="text-sm text-muted-foreground space-y-1">
-                          {program.highlights.map((highlight) => (
-                            <li key={highlight}>• {highlight}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
+                    <p className="text-sm font-medium text-center mb-2">What you'll learn:</p>
+                    <ul className="text-sm text-muted-foreground space-y-1 text-center">
+                      {program.highlights.map((highlight) => (
+                        <li key={highlight} className="flex items-center justify-center gap-2">
+                          <Award className="h-3 w-3 text-accent" />
+                          {highlight}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </CardContent>
-                <CardFooter>
-                  <Button onClick={() => scrollToSection('contact')} className="w-full gradient-accent">
+                <CardFooter className="pt-4">
+                  <Button onClick={() => scrollToSection('contact')} className="w-full gradient-accent text-lg py-6">
                     Enroll Now
                   </Button>
                 </CardFooter>
