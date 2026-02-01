@@ -1,13 +1,20 @@
-import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import anydLogo from '@/assets/anyd-logo.png';
 
 const navigation = {
   main: [
-    { name: 'About', href: '/about' },
-    { name: 'Programs', href: '/programs' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'About', href: '#about' },
+    { name: 'Programs', href: '#programs' },
+    { name: 'Contact', href: '#contact' },
   ],
+};
+
+const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  e.preventDefault();
+  const element = document.querySelector(href);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
 };
 
 export function Footer() {
@@ -17,9 +24,16 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {/* Brand */}
           <div>
-            <Link to="/" className="inline-block mb-4">
+            <a 
+              href="#home" 
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="inline-block mb-4"
+            >
               <img src={anydLogo} alt="AnyD Materials Logo" width="924" height="362" className="h-14 sm:h-16 md:h-20 w-auto" />
-            </Link>
+            </a>
             <p className="text-sm text-muted-foreground max-w-xs">
               Empowering the next generation through innovative STEM education. Associated with IIT Bombay.
             </p>
@@ -31,12 +45,13 @@ export function Footer() {
             <ul className="space-y-3">
               {navigation.main.map((item) => (
                 <li key={item.name}>
-                  <Link
-                    to={item.href}
-                    className="text-sm text-muted-foreground hover:text-accent transition-smooth"
+                  <a
+                    href={item.href}
+                    onClick={(e) => scrollToSection(e, item.href)}
+                    className="text-sm text-muted-foreground hover:text-accent transition-smooth cursor-pointer"
                   >
                     {item.name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
