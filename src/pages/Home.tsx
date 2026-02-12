@@ -8,6 +8,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
 import PromoPopup from '@/components/PromoPopup';
+import ReviewsCarousel from '@/components/ReviewsCarousel';
 
 
 const features = [
@@ -268,6 +269,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ReviewsCarousel />
 
       {/* Contact Section */}
       <section id="contact" className="py-24 bg-secondary scroll-mt-20">
