@@ -12,49 +12,49 @@ import Map from '@/components/Map';
 
 const features = [
   {
-    name: 'Quality Programs',
-    description: 'Comprehensive STEM programs designed by experts from IIT Bombay, tailored for different age groups and skill levels.',
-    icon: BookOpen,
+    name: 'Learn from the Best',
+    description: 'Our curriculum is designed by IIT Bombay researchers and professors — the same minds shaping India\'s brightest engineers.',
+    icon: Award,
   },
   {
-    name: 'Innovative Materials',
-    description: 'Cutting-edge educational materials and kits that make complex concepts easy to understand and fun to explore.',
+    name: 'SINE-Backed Innovation',
+    description: 'Incubated at IIT Bombay\'s SINE — where India\'s most promising startups are built, mentored, and scaled.',
     icon: Rocket,
   },
   {
-    name: 'Expert Guidance',
-    description: 'Learn from experienced educators and researchers who are passionate about nurturing young talent in STEM fields.',
-    icon: Users,
+    name: '100% Hands-On Learning',
+    description: 'No rote learning. Every session is project-based, with real materials and mentorship included — children build, not just watch.',
+    icon: BookOpen,
   },
   {
-    name: 'Proven Results',
-    description: 'Join thousands of students who have excelled in science competitions and pursued successful STEM careers.',
-    icon: Award,
+    name: 'Loved by 1,500+ Families',
+    description: 'A thriving community of parents and children who trust AnyD to keep their kids curious, confident, and future-ready.',
+    icon: Users,
   },
 ];
 
 const stats = [
-  { label: 'Students Taught', value: '10,000+' },
-  { label: 'Programs Offered', value: '25+' },
-  { label: 'Expert Educators', value: '50+' },
-  { label: 'Success Rate', value: '95%' },
+  { label: 'Happy Families', value: '1,500+' },
+  { label: 'Learning Levels', value: '2' },
+  { label: 'IIT Bombay Experts', value: '10+' },
+  { label: 'Hands-On Rate', value: '100%' },
 ];
 
 const values = [
   {
     icon: Target,
     title: 'Our Mission',
-    description: 'To make quality STEM education accessible to all students, fostering innovation, critical thinking, and problem-solving skills that prepare them for the challenges of tomorrow.',
+    description: 'To make world-class STEM education accessible to every child — replacing passive learning with real-world projects that build skills, confidence, and curiosity.',
   },
   {
     icon: Eye,
     title: 'Our Vision',
-    description: 'To be the leading provider of innovative STEM education in India, creating a generation of scientifically literate citizens and future innovators.',
+    description: 'To become India\'s most trusted STEM learning platform — raising a generation of innovators, problem-solvers, and fearless thinkers.',
   },
   {
     icon: Heart,
     title: 'Our Values',
-    description: 'Excellence in education, innovation in teaching methods, inclusivity in access, and integrity in all our endeavors. We believe every child deserves the opportunity to explore and excel.',
+    description: 'Excellence without intimidation. Innovation rooted in research. A beginner-friendly approach that grows with every child — from first spark to limitless mastery.',
   },
 ];
 
@@ -117,10 +117,10 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center mb-20">
             <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-6">
-              Why Choose AnyD Materials?
+              Why Choose AnyD?
             </h2>
             <p className="text-xl text-muted-foreground">
-              We combine academic excellence with practical learning to create transformative educational experiences.
+              Built by IIT Bombay researchers. Trusted by 1,500+ families. Designed to make every child fall in love with learning.
             </p>
           </div>
 
@@ -147,10 +147,10 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center mb-16">
             <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-6">
-              About AnyD Materials
+              About AnyD
             </h2>
             <p className="text-xl text-muted-foreground">
-              Pioneering STEM education with the backing of IIT Bombay's academic excellence and research expertise.
+              Where IIT Bombay research meets real-world learning — for every young innovator.
             </p>
           </div>
 
@@ -159,10 +159,10 @@ export default function Home() {
             <h3 className="text-2xl font-bold tracking-tight text-foreground mb-6">Our Story</h3>
             <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
               <p>
-                AnyD Materials was founded with a simple yet powerful vision: to bridge the gap between traditional education and the practical skills needed in today's technology-driven world. Associated with IIT Bombay, one of India's premier engineering institutions, we bring world-class expertise to STEM education.
+                AnyD was founded by IIT Bombay researchers and professors who saw a fundamental gap in how children learn science and technology. Traditional classrooms teach theory — we teach by doing. Every course we offer is rooted in real research, designed to turn curiosity into capability.
               </p>
               <p>
-                Our team comprises experienced educators, researchers, and industry professionals who are passionate about nurturing young minds. We've developed comprehensive programs that make complex scientific concepts accessible and engaging for students from elementary school through college.
+                Incubated at IIT Bombay's SINE, we bring world-class academic rigour to an experience that's fun, beginner-friendly, and genuinely hands-on. With all materials and mentorship included, parents can trust that their children are learning from the very best — while having the time of their lives.
               </p>
             </div>
           </div>
