@@ -44,17 +44,17 @@ const values = [
   {
     icon: Target,
     title: 'Our Mission',
-    description: 'To make world-class STEM education accessible to every child — replacing passive learning with real-world projects that build skills, confidence, and curiosity.',
+    description: 'To bridge the gap between academic research and young minds — empowering every child with IIT-grade STEM experiences that build real skills, not just grades.',
   },
   {
     icon: Eye,
     title: 'Our Vision',
-    description: 'To become India\'s most trusted STEM learning platform — raising a generation of innovators, problem-solvers, and fearless thinkers.',
+    description: 'A future where every child thinks like a researcher — questioning, experimenting, and creating solutions that shape tomorrow.',
   },
   {
     icon: Heart,
     title: 'Our Values',
-    description: 'Excellence without intimidation. Innovation rooted in research. A beginner-friendly approach that grows with every child — from first spark to limitless mastery.',
+    description: 'Research-driven rigour meets child-friendly simplicity. We believe learning should be hands-on, curiosity-led, and accessible to every beginner and beyond.',
   },
 ];
 
@@ -159,12 +159,35 @@ export default function Home() {
             <h3 className="text-2xl font-bold tracking-tight text-foreground mb-6">Our Story</h3>
             <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
               <p>
-                AnyD was founded by IIT Bombay researchers and professors who saw a fundamental gap in how children learn science and technology. Traditional classrooms teach theory — we teach by doing. Every course we offer is rooted in real research, designed to turn curiosity into capability.
+                AnyD was born from a simple but powerful conviction: <span className="text-foreground font-medium">curiosity is the foundation of lifelong learning</span>. Founded by <span className="text-foreground font-medium">Dr. Seema, Dr. Shweta, and Dr. Parag Bhargawa</span> — IIT Bombay researchers and professors — AnyD exists to close the gap between what children are taught and what they truly need to thrive in a technology-driven world.
               </p>
               <p>
-                Incubated at IIT Bombay's SINE, we bring world-class academic rigour to an experience that's fun, beginner-friendly, and genuinely hands-on. With all materials and mentorship included, parents can trust that their children are learning from the very best — while having the time of their lives.
+                Incubated at <span className="text-foreground font-medium">SINE, IIT Bombay</span>, and mentored by a network of IITians, we bring research-grade rigour to every session — while keeping the experience fun, accessible, and genuinely hands-on. Our founders believe that early exposure to technology doesn't just prepare children for the future — it empowers them to shape it.
               </p>
             </div>
+          </div>
+
+          {/* Innovation Milestone */}
+          <div className="mx-auto max-w-3xl mb-16">
+            <Card className="shadow-card border-accent/20 bg-accent/5">
+              <CardHeader>
+                <Badge variant="secondary" className="w-fit mb-2">Innovation Milestone</Badge>
+                <CardTitle className="text-2xl">India's First Conductive Ink Pen</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">
+                  AnyD introduced the concept of <span className="text-foreground font-medium">electricity on paper</span> — making it possible for children to draw circuits that actually work.
+                </p>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-muted-foreground">
+                  {['Simplified complex science into hands-on exploration', 'Introduced electricity on paper for the first time in India', 'Encouraged real-world experimentation from day one', 'A breakthrough born from IIT Bombay research'].map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <Award className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
           </div>
 
           {/* Values */}
@@ -182,6 +205,13 @@ export default function Home() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          {/* Closing Line */}
+          <div className="mt-16 text-center">
+            <p className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+              Research-driven. Hands-on. Future-ready.
+            </p>
           </div>
         </div>
       </section>
