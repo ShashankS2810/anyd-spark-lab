@@ -8,7 +8,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
 import PromoPopup from '@/components/PromoPopup';
-import Map from '@/components/Map';
+
 
 const features = [
   {
@@ -399,30 +399,6 @@ export default function Home() {
                 </CardContent>
               </Card>
 
-              <Card className="shadow-card bg-card border-0">
-                <CardHeader>
-                  <CardTitle className="text-xl">Visit Our Campus</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">
-                    Schedule a campus visit to see our facilities, meet our educators, and learn more about our programs.
-                  </p>
-                  <Button variant="outline" className="w-full">
-                    Schedule a Visit
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="py-16 bg-background">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="rounded-2xl overflow-hidden shadow-elevated">
-            <div className="h-[500px]">
-              <Map />
             </div>
           </div>
         </div>
