@@ -16,16 +16,16 @@ export function Hero() {
           <div className="animate-fade-in">
             <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-5 py-2.5 mb-8 border border-accent/20">
               <Sparkles className="h-5 w-5 text-accent" />
-              <span className="text-base font-medium text-primary-foreground">Associated with IIT Bombay</span>
+              <span className="text-base font-medium text-primary-foreground">Founded by IIT Bombay Researchers</span>
             </div>
             
             <h1 className="text-5xl font-bold tracking-tight text-primary-foreground sm:text-7xl mb-8">
-              Inspiring Young Minds Through{' '}
-              <span className="text-accent">STEM Education</span>
+              Where Curiosity Meets{' '}
+              <span className="text-accent">Real Learning</span>
             </h1>
             
             <p className="text-xl leading-9 text-primary-foreground/90 mb-10">
-              AnyD Materials provides innovative educational programs, hands-on materials, and engaging projects that make science, technology, engineering, and mathematics accessible and exciting for students of all ages.
+              AnyD brings IIT Bombay-designed STEM education to your child — 100% hands-on, beginner-friendly, and built to inspire the innovators of tomorrow.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-5">
