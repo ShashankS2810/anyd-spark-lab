@@ -65,7 +65,7 @@ const ReviewsCarousel = () => {
     name.split(' ').map((n) => n[0]).join('');
 
   return (
-    <section className="py-24 bg-secondary">
+    <section id="reviews" className="py-24 bg-secondary">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center mb-16">
           <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-6">
