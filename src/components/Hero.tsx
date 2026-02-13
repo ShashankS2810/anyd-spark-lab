@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Sparkles } from 'lucide-react';
-import heroImage from '@/assets/hero-image.jpg';
+import heroVideo from '@/assets/hero-video.mp4';
 
 export function Hero() {
   return (
@@ -44,9 +44,13 @@ export function Hero() {
           {/* Image */}
           <div className="relative animate-scale-in">
             <div className="aspect-[16/10] rounded-2xl overflow-hidden shadow-elevated border border-primary-foreground/10">
-              <img
-                src={heroImage}
-                alt="Students engaged in STEM learning activities"
+              <video
+                src={heroVideo}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
                 className="h-full w-full object-cover"
               />
             </div>
