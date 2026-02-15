@@ -1,6 +1,7 @@
 import { Hero } from '@/components/Hero';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { BookOpen, Rocket, Users, Award, Target, Eye, Heart, Clock, Mail, Phone, MapPin } from 'lucide-react';
+import ProgramsSection from '@/components/ProgramsSection';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
@@ -59,24 +60,6 @@ const values = [
   },
 ];
 
-const programs = [
-  {
-    title: 'Basic Level Session',
-    description: 'Short, beginner-friendly session that focuses mainly on using and understanding the kits provided. Ideal for kids who are starting their STEM learning journey.',
-    duration: '45–60 minutes',
-    level: 'Beginner',
-    icon: Rocket,
-    highlights: ['Kit-based learning', 'Fun experiments', 'Perfect for beginners'],
-  },
-  {
-    title: 'Advanced Level Session',
-    description: 'Covers advanced STEM concepts and helps students build advanced projects with hands-on, deeper learning experiences.',
-    duration: 'Around 2 hours',
-    level: 'Advanced',
-    icon: BookOpen,
-    highlights: ['Advanced concepts', 'Project building', 'Hands-on learning'],
-  },
-];
 
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
@@ -217,58 +200,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Programs Section */}
-      <section id="programs" className="py-24 bg-background scroll-mt-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center mb-16">
-            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-6">
-              Our Programs
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Comprehensive STEM programs designed to inspire, educate, and empower students at every level.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 max-w-4xl mx-auto">
-            {programs.map((program, index) => (
-              <Card key={program.title} className="flex flex-col shadow-card transition-smooth hover:shadow-elevated hover:-translate-y-1 animate-scale-in overflow-hidden" style={{ animationDelay: `${index * 100}ms` }}>
-                <div className="bg-accent/10 p-6 flex items-center justify-center">
-                  <div className="h-20 w-20 rounded-full bg-accent/20 flex items-center justify-center">
-                    <program.icon className="h-10 w-10 text-accent" />
-                  </div>
-                </div>
-                <CardHeader className="text-center">
-                  <Badge variant="secondary" className="w-fit mx-auto mb-2">{program.level}</Badge>
-                  <CardTitle className="text-2xl mb-2">{program.title}</CardTitle>
-                  <CardDescription className="text-base">{program.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="flex-1">
-                  <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-4">
-                    <Clock className="h-4 w-4 text-accent" />
-                    <span>Duration: {program.duration}</span>
-                  </div>
-                  <div className="space-y-2">
-                    <p className="text-sm font-medium text-center mb-2">What you'll learn:</p>
-                    <ul className="text-sm text-muted-foreground space-y-1 text-center">
-                      {program.highlights.map((highlight) => (
-                        <li key={highlight} className="flex items-center justify-center gap-2">
-                          <Award className="h-3 w-3 text-accent" />
-                          {highlight}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </CardContent>
-                <CardFooter className="pt-4">
-                  <Button onClick={() => scrollToSection('contact')} className="w-full gradient-accent text-lg py-6">
-                    Enroll Now
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProgramsSection />
 
       <ReviewsCarousel />
 
