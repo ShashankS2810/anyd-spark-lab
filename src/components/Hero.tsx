@@ -43,7 +43,7 @@ export function Hero() {
 
           {/* Image */}
           <div className="relative animate-scale-in">
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-elevated border border-primary-foreground/10">
+            <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-elevated border border-primary-foreground/10">
               <video
                 src={heroVideo}
                 autoPlay
