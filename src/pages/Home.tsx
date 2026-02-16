@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { toast } from 'sonner';
 import PromoPopup from '@/components/PromoPopup';
 import ReviewsCarousel from '@/components/ReviewsCarousel';
@@ -247,6 +248,19 @@ export default function Home() {
                     <div className="space-y-2">
                       <Label htmlFor="phone">Phone Number</Label>
                       <Input id="phone" name="phone" type="tel" />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="age">Age</Label>
+                      <Select name="age" required>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select Age Group" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="6-8">6–8 years</SelectItem>
+                          <SelectItem value="9-14">9–14 years</SelectItem>
+                        </SelectContent>
+                      </Select>
                     </div>
 
                     <div className="space-y-2">
