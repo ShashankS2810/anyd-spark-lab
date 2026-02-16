@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles, Award } from 'lucide-react';
 import heroVideo from '@/assets/hero-video.mp4';
 
 export function Hero() {
@@ -16,16 +16,23 @@ export function Hero() {
           <div className="animate-fade-in">
             <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-5 py-2.5 mb-8 border border-accent/20">
               <Sparkles className="h-5 w-5 text-accent" />
-              <span className="text-base font-medium text-primary-foreground">Founded by IIT Bombay Researchers</span>
+              <span className="text-base font-medium text-primary-foreground">Hands-On STEM Education for Young Innovators</span>
             </div>
             
             <h1 className="text-5xl font-bold tracking-tight text-primary-foreground sm:text-7xl mb-8">
               Why is '<span className="text-accent">Why</span>' important?
             </h1>
             
-            <p className="text-xl leading-9 text-primary-foreground/90 mb-10">
+            <p className="text-xl leading-9 text-primary-foreground/90 mb-8">
               At AnyD Materials, we believe every '<span className="font-semibold text-accent">Why</span>' ignites curiosity, turning questions into hands-on learning and creative discovery.
             </p>
+
+            <div className="inline-flex items-center gap-2.5 rounded-full bg-primary-foreground/10 backdrop-blur-sm px-5 py-2.5 mb-8 border border-primary-foreground/15 shadow-sm">
+              <Award className="h-5 w-5 text-accent" />
+              <span className="text-base font-semibold text-primary-foreground">
+                Founded by <span className="text-accent">IIT Bombay</span> Researchers
+              </span>
+            </div>
             
             <div className="flex flex-col sm:flex-row gap-5">
               <Button asChild size="lg" className="gradient-accent shadow-elevated text-lg px-8 py-6">
