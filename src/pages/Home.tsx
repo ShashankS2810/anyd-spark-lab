@@ -11,6 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { toast } from 'sonner';
 import PromoPopup from '@/components/PromoPopup';
 import ReviewsCarousel from '@/components/ReviewsCarousel';
+import foundersImage from '@/assets/founders.jpeg';
 
 
 const features = [
@@ -150,6 +151,18 @@ export default function Home() {
                 Incubated at <span className="text-foreground font-medium">SINE, IIT Bombay</span>, and mentored by a network of IITians, we bring research-grade rigour to every session — while keeping the experience fun, accessible, and genuinely hands-on. Our founders believe that early exposure to technology doesn't just prepare children for the future — it empowers them to shape it.
               </p>
             </div>
+          </div>
+
+          {/* Founders Image */}
+          <div className="mx-auto max-w-3xl mb-16 flex flex-col items-center">
+            <img
+              src={foundersImage}
+              alt="AnyD Founders – Dr. Seema, Dr. Shweta, and Dr. Parag Bhargawa"
+              className="w-full md:w-[65%] rounded-2xl shadow-elevated object-cover"
+            />
+            <p className="mt-3 text-sm text-muted-foreground text-center">
+              Founders – IIT Bombay Researchers
+            </p>
           </div>
 
           {/* Innovation Milestone */}
