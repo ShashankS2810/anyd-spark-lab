@@ -89,8 +89,12 @@ export default function Home() {
             <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-4">
               Why Choose AnyD?
             </h2>
-            <p className="text-xl text-muted-foreground">
-              Built by IIT Bombay researchers. Trusted by 1,500+ families. Designed to make every child fall in love with learning.
+            <p className="text-xl md:text-2xl font-semibold text-foreground mb-3">
+              Tired of basic school STEM and theory-only learning?<br />
+              <span className="text-accent">Your child deserves</span> hands-on experiences that build real skills, confidence, and creativity.
+            </p>
+            <p className="text-sm text-muted-foreground tracking-wide">
+              Built by IIT Bombay researchers • Trusted by 1,500+ families • Designed to make every child fall in love with learning
             </p>
           </div>
 
