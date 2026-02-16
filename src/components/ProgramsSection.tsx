@@ -249,24 +249,10 @@ export default function ProgramsSection() {
                     </div>
                   </div>
 
-                  {/* CTA Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-3 items-center">
+                  {/* CTA */}
+                  <div className="flex justify-center pt-2">
                     <Button
-                      variant="outline"
-                      className="w-full sm:w-auto border-accent/30 text-accent hover:bg-accent/10 px-6"
-                      onClick={() => { setSelectedProgram(null); scrollToSection('contact'); }}
-                    >
-                      View Projects for 6–8
-                    </Button>
-                    <Button
-                      variant="outline"
-                      className="w-full sm:w-auto border-accent/30 text-accent hover:bg-accent/10 px-6"
-                      onClick={() => { setSelectedProgram(null); scrollToSection('contact'); }}
-                    >
-                      View Projects for 9–14
-                    </Button>
-                    <Button
-                      className="w-full sm:w-auto gradient-accent shadow-elevated text-lg px-8 py-5"
+                      className="gradient-accent shadow-elevated text-lg px-10 py-6 rounded-xl hover:scale-105 transition-transform duration-200"
                       onClick={() => { setSelectedProgram(null); scrollToSection('contact'); }}
                     >
                       Book a Seat
