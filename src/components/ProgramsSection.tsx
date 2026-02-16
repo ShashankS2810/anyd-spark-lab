@@ -121,6 +121,7 @@ const programs: Program[] = [
     title: 'General Skills',
     description: 'Present, collaborate, think critically, and solve real problems.',
     icon: Users,
+    comingSoon: true,
     ageDetails: {
       young: 'Learn to present, share wins, collaborate, and ask better questions.',
       teen: 'Pitching, teamwork sprints, documentation, and design critique.',
