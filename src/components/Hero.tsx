@@ -20,12 +20,11 @@ export function Hero() {
             </div>
             
             <h1 className="text-5xl font-bold tracking-tight text-primary-foreground sm:text-7xl mb-8">
-              Where Curiosity Meets{' '}
-              <span className="text-accent">Real Learning</span>
+              Why is '<span className="text-accent">Why</span>' important?
             </h1>
             
             <p className="text-xl leading-9 text-primary-foreground/90 mb-10">
-              AnyD brings IIT Bombay-designed STEM education to your child — 100% hands-on, beginner-friendly, and built to inspire the innovators of tomorrow.
+              At AnyD Materials, we believe every '<span className="font-semibold text-accent">Why</span>' ignites curiosity, turning questions into hands-on learning and creative discovery.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-5">
