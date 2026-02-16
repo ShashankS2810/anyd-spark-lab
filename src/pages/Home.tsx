@@ -161,7 +161,7 @@ export default function Home() {
               className="w-full md:w-[65%] rounded-2xl shadow-elevated object-cover"
             />
             <p className="mt-3 text-sm text-muted-foreground text-center">
-              Founders – IIT Bombay Researchers
+              Founders – <span className="font-semibold text-accent">IIT Bombay Researchers</span>
             </p>
           </div>
 
