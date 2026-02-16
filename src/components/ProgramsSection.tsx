@@ -23,6 +23,10 @@ import {
 } from 'lucide-react';
 import stemVideo from '@/assets/stem-class-video.mp4';
 import roboticsVideo from '@/assets/robotics-class-video.mp4';
+import pdImage1 from '@/assets/pd-design-1.jpeg';
+import pdImage2 from '@/assets/pd-design-2.jpeg';
+import pdImage3 from '@/assets/pd-design-3.jpeg';
+import pdImage4 from '@/assets/pd-design-4.jpeg';
 
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
@@ -187,14 +191,22 @@ export default function ProgramsSection() {
 
         {/* Modal Detail Panel */}
         <Dialog open={!!selectedProgram} onOpenChange={(open) => !open && setSelectedProgram(null)}>
-          <DialogContent className={`${selectedProgram?.id === 'stem' || selectedProgram?.id === 'robotics' ? 'max-w-5xl' : 'max-w-2xl'} max-h-[85vh] overflow-y-auto rounded-2xl border-accent/20 backdrop-blur-sm p-0`}>
+          <DialogContent className={`${selectedProgram?.id === 'stem' || selectedProgram?.id === 'robotics' || selectedProgram?.id === 'product-design' ? 'max-w-5xl' : 'max-w-2xl'} max-h-[85vh] overflow-y-auto rounded-2xl border-accent/20 backdrop-blur-sm p-0`}>
             {selectedProgram && (() => {
               const Icon = selectedProgram.icon;
               const videoMap: Record<string, string> = { stem: stemVideo, robotics: roboticsVideo };
               const videoSrc = videoMap[selectedProgram.id];
               const hasVideo = !!videoSrc;
+              const hasImages = selectedProgram.id === 'product-design';
+              const pdImages = [
+                { src: pdImage1, alt: '3D modeling on laptop' },
+                { src: pdImage2, alt: 'Student-made prototype' },
+                { src: pdImage3, alt: '3D printing process' },
+                { src: pdImage4, alt: 'Kids sketching product ideas' },
+              ];
+              const hasSidePanel = hasVideo || hasImages;
               return (
-                <div className={`${hasVideo ? 'flex flex-col md:flex-row' : ''}`}>
+                <div className={`${hasSidePanel ? 'flex flex-col md:flex-row' : ''}`}>
                   {hasVideo && (
                     <div className="md:w-[45%] flex-shrink-0 p-4 md:p-6 flex items-center">
                       <div className="w-full rounded-xl overflow-hidden shadow-elevated bg-foreground/5">
@@ -210,9 +222,29 @@ export default function ProgramsSection() {
                       </div>
                     </div>
                   )}
+                  {hasImages && (
+                    <div className="md:w-[45%] flex-shrink-0 p-4 md:p-6 flex items-center">
+                      <div className="w-full grid grid-cols-2 gap-3">
+                        {pdImages.map((img, i) => (
+                          <div
+                            key={i}
+                            className="rounded-xl overflow-hidden shadow-elevated bg-foreground/5 animate-fade-in"
+                            style={{ animationDelay: `${i * 100}ms` }}
+                          >
+                            <img
+                              src={img.src}
+                              alt={img.alt}
+                              className="w-full h-full object-cover aspect-square"
+                              loading="lazy"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
 
                   {/* Content column */}
-                  <div className={`p-6 md:p-8 ${hasVideo ? 'md:w-[55%]' : ''}`}>
+                  <div className={`p-6 md:p-8 ${hasSidePanel ? 'md:w-[55%]' : ''}`}>
                     {/* Header */}
                     <DialogHeader className="mb-6">
                       <div className="flex items-center gap-3 mb-3">
@@ -234,7 +266,7 @@ export default function ProgramsSection() {
                     </DialogHeader>
 
                     {/* Two-column age groups */}
-                    <div className={`grid grid-cols-1 ${hasVideo ? '' : 'md:grid-cols-2'} gap-4 mb-8`}>
+                    <div className={`grid grid-cols-1 ${hasSidePanel ? '' : 'md:grid-cols-2'} gap-4 mb-8`}>
                       {/* Age 6-8 */}
                       <div className="rounded-xl bg-secondary p-5 border border-border">
                         <div className="flex items-center gap-2 mb-3">
