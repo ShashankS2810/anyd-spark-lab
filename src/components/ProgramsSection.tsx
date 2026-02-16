@@ -27,6 +27,10 @@ import pdImage1 from '@/assets/pd-design-1.jpeg';
 import pdImage2 from '@/assets/pd-design-2.jpeg';
 import pdImage3 from '@/assets/pd-design-3.jpeg';
 import pdImage4 from '@/assets/pd-design-4.jpeg';
+import aiImage1 from '@/assets/ai-design-1.jpeg';
+import aiImage2 from '@/assets/ai-design-2.jpeg';
+import aiImage3 from '@/assets/ai-design-3.jpeg';
+import aiImage4 from '@/assets/ai-design-4.jpeg';
 
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
@@ -191,19 +195,28 @@ export default function ProgramsSection() {
 
         {/* Modal Detail Panel */}
         <Dialog open={!!selectedProgram} onOpenChange={(open) => !open && setSelectedProgram(null)}>
-          <DialogContent className={`${selectedProgram?.id === 'stem' || selectedProgram?.id === 'robotics' || selectedProgram?.id === 'product-design' ? 'max-w-5xl' : 'max-w-2xl'} max-h-[85vh] overflow-y-auto rounded-2xl border-accent/20 backdrop-blur-sm p-0`}>
+          <DialogContent className={`${selectedProgram?.id === 'stem' || selectedProgram?.id === 'robotics' || selectedProgram?.id === 'product-design' || selectedProgram?.id === 'ai' ? 'max-w-5xl' : 'max-w-2xl'} max-h-[85vh] overflow-y-auto rounded-2xl border-accent/20 backdrop-blur-sm p-0`}>
             {selectedProgram && (() => {
               const Icon = selectedProgram.icon;
               const videoMap: Record<string, string> = { stem: stemVideo, robotics: roboticsVideo };
               const videoSrc = videoMap[selectedProgram.id];
               const hasVideo = !!videoSrc;
-              const hasImages = selectedProgram.id === 'product-design';
-              const pdImages = [
-                { src: pdImage1, alt: '3D modeling on laptop' },
-                { src: pdImage2, alt: 'Student-made prototype' },
-                { src: pdImage3, alt: '3D printing process' },
-                { src: pdImage4, alt: 'Kids sketching product ideas' },
-              ];
+              const hasImages = selectedProgram.id === 'product-design' || selectedProgram.id === 'ai';
+              const imageMap: Record<string, { src: string; alt: string }[]> = {
+                'product-design': [
+                  { src: pdImage1, alt: '3D modeling on laptop' },
+                  { src: pdImage2, alt: 'Student-made prototype' },
+                  { src: pdImage3, alt: '3D printing process' },
+                  { src: pdImage4, alt: 'Kids sketching product ideas' },
+                ],
+                'ai': [
+                  { src: aiImage1, alt: 'Kids coding with AI tools' },
+                  { src: aiImage2, alt: 'AI classroom with data screens' },
+                  { src: aiImage3, alt: 'Students learning AI concepts' },
+                  { src: aiImage4, alt: 'Pattern recognition activity' },
+                ],
+              };
+              const sideImages = imageMap[selectedProgram.id] || [];
               const hasSidePanel = hasVideo || hasImages;
               return (
                 <div className={`${hasSidePanel ? 'flex flex-col md:flex-row' : ''}`}>
@@ -225,7 +238,7 @@ export default function ProgramsSection() {
                   {hasImages && (
                     <div className="md:w-[45%] flex-shrink-0 p-4 md:p-6 flex items-center">
                       <div className="w-full grid grid-cols-2 gap-3">
-                        {pdImages.map((img, i) => (
+                        {sideImages.map((img, i) => (
                           <div
                             key={i}
                             className="rounded-xl overflow-hidden shadow-elevated bg-foreground/5 animate-fade-in"
