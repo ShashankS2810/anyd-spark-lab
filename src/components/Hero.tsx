@@ -1,7 +1,10 @@
-import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Sparkles, Award } from 'lucide-react';
 import heroVideo from '@/assets/hero-video.mp4';
+
+const scrollToSection = (id: string) => {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+};
 
 export function Hero() {
   return (
@@ -35,14 +38,12 @@ export function Hero() {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-5">
-              <Button asChild size="lg" className="gradient-accent shadow-elevated text-lg px-8 py-6">
-                <Link to="/programs">
-                  Explore Programs
-                  <ArrowRight className="ml-2 h-6 w-6" />
-                </Link>
+              <Button size="lg" className="gradient-accent shadow-elevated text-lg px-8 py-6" onClick={() => scrollToSection('programs')}>
+                Explore Programs
+                <ArrowRight className="ml-2 h-6 w-6" />
               </Button>
-              <Button asChild size="lg" variant="outline" className="bg-card/10 border-primary-foreground/20 text-primary-foreground hover:bg-card/20 backdrop-blur text-lg px-8 py-6">
-                <Link to="/contact">Get in Touch</Link>
+              <Button size="lg" variant="outline" className="bg-card/10 border-primary-foreground/20 text-primary-foreground hover:bg-card/20 backdrop-blur text-lg px-8 py-6" onClick={() => scrollToSection('contact')}>
+                Get in Touch
               </Button>
             </div>
           </div>
