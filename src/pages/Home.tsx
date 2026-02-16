@@ -9,7 +9,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { toast } from 'sonner';
-import PromoPopup from '@/components/PromoPopup';
+
 import ReviewsCarousel from '@/components/ReviewsCarousel';
 import foundersImage from '@/assets/founders.jpeg';
 import teamImage from '@/assets/team.jpeg';
@@ -82,7 +82,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col">
-      <PromoPopup />
+      
       <Hero />
 
       {/* Stats Section */}
