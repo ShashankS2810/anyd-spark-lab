@@ -1,5 +1,5 @@
 import { Card, CardContent } from '@/components/ui/card';
-import { Star, Users, Trophy, Quote } from 'lucide-react';
+import { Star, Users, Trophy, Quote, TrendingUp, BookOpen, Lightbulb, Wrench } from 'lucide-react';
 
 const reviews = [
   {
@@ -46,11 +46,70 @@ const stats = [
   { icon: Trophy, value: '100%', label: 'Hands-on Success' },
 ];
 
+const whyNowCards = [
+  {
+    icon: TrendingUp,
+    text: (
+      <>
+        <span className="font-bold text-accent">85 million jobs</span> may change or disappear by 2030 (World Economic Forum). Children who build problem-solving and STEM skills early adapt faster.
+      </>
+    ),
+  },
+  {
+    icon: BookOpen,
+    text: (
+      <>
+        <span className="font-bold text-accent">NEP 2020</span> emphasizes experiential and hands-on learning. AnyD follows this approach so children learn by doing, not memorizing.
+      </>
+    ),
+  },
+  {
+    icon: Lightbulb,
+    text: 'Hands-on STEM builds curiosity, confidence, and real-world thinking — skills exams alone cannot develop.',
+  },
+  {
+    icon: Wrench,
+    text: 'When children build, test, and experiment themselves, learning becomes fun, memorable, and meaningful.',
+  },
+];
+
 const ReviewsCarousel = () => {
   return (
     <section id="reviews" className="py-16 bg-secondary scroll-mt-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Header */}
+
+        {/* Why Now Sub-section */}
+        <div className="mx-auto max-w-3xl text-center mb-10">
+          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-accent mb-2">Why Now</span>
+          <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-3">
+            Why Early STEM Exposure Matters
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            The world is changing fast. The skills children build today shape the opportunities they'll have tomorrow.
+          </p>
+        </div>
+
+        <div className="mx-auto max-w-2xl space-y-4 mb-14">
+          {whyNowCards.map((card, index) => {
+            const Icon = card.icon;
+            return (
+              <Card
+                key={index}
+                className="shadow-card animate-fade-in"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <CardContent className="flex items-start gap-4 p-5">
+                  <div className="h-10 w-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Icon className="h-5 w-5 text-accent" />
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{card.text}</p>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+
+        {/* Testimonials Header */}
         <div className="mx-auto max-w-3xl text-center mb-8">
           <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-4">
             What Parents Say
@@ -90,22 +149,15 @@ const ReviewsCarousel = () => {
               style={{ animationDelay: `${index * 80}ms` }}
             >
               <CardContent className="p-6">
-                {/* Quote icon */}
                 <Quote className="h-6 w-6 text-accent/20 mb-3" />
-
-                {/* Stars */}
                 <div className="flex gap-1 mb-4">
                   {Array.from({ length: review.rating }).map((_, i) => (
                     <Star key={i} className="h-4 w-4 fill-accent text-accent" />
                   ))}
                 </div>
-
-                {/* Review text */}
                 <p className="text-sm text-muted-foreground leading-relaxed mb-5">
                   "{review.text}"
                 </p>
-
-                {/* Author */}
                 <div className="border-t border-border pt-4">
                   <div className="font-semibold text-foreground text-sm">{review.name}</div>
                   <div className="text-xs text-muted-foreground">Parent of {review.childAge}</div>
