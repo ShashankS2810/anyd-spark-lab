@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Sparkles, Award } from 'lucide-react';
+import { ArrowRight, Award } from 'lucide-react';
 import heroVideo from '@/assets/hero-video.mp4';
 
 const scrollToSection = (id: string) => {
@@ -17,30 +17,23 @@ export function Hero() {
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-12 items-center">
           {/* Text content */}
           <div className="animate-fade-in">
-            <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-5 py-2.5 mb-6 border border-accent/20">
-              <Sparkles className="h-5 w-5 text-accent" />
-              <span className="text-base font-medium text-primary-foreground">Hands-On STEM Education for Young Innovators</span>
+            <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-1.5 mb-6 border border-accent/20">
+              <Award className="h-4 w-4 text-accent" />
+              <span className="text-xs font-bold uppercase tracking-widest text-primary-foreground">IIT Bombay SINE Incubated</span>
             </div>
             
             <h1 className="text-5xl font-bold tracking-tight text-primary-foreground sm:text-7xl mb-5">
-              Why is '<span className="text-accent">Why</span>' important?
+              Unlock Future-Ready Skills: <span className="text-accent">Hands-On STEM</span> for Curious Kids 6–14
             </h1>
             
             <p className="text-xl leading-9 text-primary-foreground/90 mb-6">
-              At AnyD Materials, we believe every '<span className="font-semibold text-accent">Why</span>' ignites curiosity, turning questions into hands-on learning and creative discovery.
+              1500+ Thriving Parents • Build, Print & Take Home Real Projects
             </p>
-
-            <div className="inline-flex items-center gap-2.5 rounded-full bg-primary-foreground/10 backdrop-blur-sm px-5 py-2.5 mb-6 border border-primary-foreground/15 shadow-sm">
-              <Award className="h-5 w-5 text-accent" />
-              <span className="text-base font-semibold text-primary-foreground">
-                Founded by <span className="text-accent">IIT Bombay</span> Researchers
-              </span>
-            </div>
             
             <div className="flex flex-col sm:flex-row gap-5">
-              <Button size="lg" className="gradient-accent shadow-elevated text-lg px-8 py-6" onClick={() => scrollToSection('programs')}>
+              <Button size="lg" className="gradient-accent shadow-elevated text-lg px-10 py-7 font-bold tracking-wide ring-2 ring-accent/30 ring-offset-2 ring-offset-transparent hover:scale-105 transition-transform duration-200" onClick={() => scrollToSection('programs')}>
                 Explore Programs
-                <ArrowRight className="ml-2 h-6 w-6" />
+                <ArrowRight className="ml-2 h-6 w-6 animate-bounce" />
               </Button>
               <Button size="lg" variant="outline" className="bg-card/10 border-primary-foreground/20 text-primary-foreground hover:bg-card/20 backdrop-blur text-lg px-8 py-6" onClick={() => scrollToSection('contact')}>
                 Get in Touch
