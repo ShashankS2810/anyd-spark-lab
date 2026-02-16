@@ -324,11 +324,11 @@ export default function Home() {
                     </div>
                     <div>
                       <div className="font-semibold mb-1">Address</div>
-                      <p className="text-muted-foreground">
+                      <a href="https://maps.google.com/?q=IIT+Bombay+Campus+Powai+Mumbai+400076" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-smooth">
                         IIT Bombay Campus<br />
                         Powai, Mumbai 400076<br />
                         Maharashtra, India
-                      </p>
+                      </a>
                     </div>
                   </div>
 
