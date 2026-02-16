@@ -78,37 +78,6 @@ const ReviewsCarousel = () => {
     <section id="reviews" className="py-16 bg-secondary scroll-mt-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
-        {/* Why Now Sub-section */}
-        <div className="mx-auto max-w-3xl text-center mb-10">
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-accent mb-2">Why Now</span>
-          <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-3">
-            Why Early STEM Exposure Matters
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            The world is changing fast. The skills children build today shape the opportunities they'll have tomorrow.
-          </p>
-        </div>
-
-        <div className="mx-auto max-w-2xl space-y-4 mb-14">
-          {whyNowCards.map((card, index) => {
-            const Icon = card.icon;
-            return (
-              <Card
-                key={index}
-                className="shadow-card animate-fade-in"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <CardContent className="flex items-start gap-4 p-5">
-                  <div className="h-10 w-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Icon className="h-5 w-5 text-accent" />
-                  </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{card.text}</p>
-                </CardContent>
-              </Card>
-            );
-          })}
-        </div>
-
         {/* Testimonials Header */}
         <div className="mx-auto max-w-3xl text-center mb-8">
           <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-4">
@@ -141,7 +110,7 @@ const ReviewsCarousel = () => {
         </div>
 
         {/* Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14">
           {reviews.map((review, index) => (
             <Card
               key={review.name}
@@ -166,6 +135,38 @@ const ReviewsCarousel = () => {
             </Card>
           ))}
         </div>
+
+        {/* Why Now Sub-section */}
+        <div className="mx-auto max-w-3xl text-center mb-10">
+          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-accent mb-2">Why Now</span>
+          <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-3">
+            Why Early STEM Exposure Matters
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            The world is changing fast. The skills children build today shape the opportunities they'll have tomorrow.
+          </p>
+        </div>
+
+        <div className="mx-auto max-w-2xl space-y-4">
+          {whyNowCards.map((card, index) => {
+            const Icon = card.icon;
+            return (
+              <Card
+                key={index}
+                className="shadow-card animate-fade-in"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <CardContent className="flex items-start gap-4 p-5">
+                  <div className="h-10 w-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Icon className="h-5 w-5 text-accent" />
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{card.text}</p>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+
       </div>
     </section>
   );
