@@ -1,6 +1,6 @@
 import { Hero } from '@/components/Hero';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { BookOpen, Rocket, Users, Award, Target, Eye, Heart, Clock, Mail, Phone, MapPin } from 'lucide-react';
+import { BookOpen, Rocket, Users, Award, Clock, Mail, Phone, MapPin } from 'lucide-react';
 import ProgramsSection from '@/components/ProgramsSection';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -45,23 +45,6 @@ const stats = [
   { label: 'Hands-On Rate', value: '100%' },
 ];
 
-const values = [
-  {
-    icon: Target,
-    title: 'Our Mission',
-    description: 'To bridge the gap between academic research and young minds — empowering every child with IIT-grade STEM experiences that build real skills, not just grades.',
-  },
-  {
-    icon: Eye,
-    title: 'Our Vision',
-    description: 'A future where every child thinks like a researcher — questioning, experimenting, and creating solutions that shape tomorrow.',
-  },
-  {
-    icon: Heart,
-    title: 'Our Values',
-    description: 'Research-driven rigour meets child-friendly simplicity. We believe learning should be hands-on, curiosity-led, and accessible to every beginner and beyond.',
-  },
-];
 
 
 const scrollToSection = (id: string) => {
@@ -199,23 +182,6 @@ export default function Home() {
                 </ul>
               </CardContent>
             </Card>
-          </div>
-
-          {/* Values */}
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-            {values.map((value, index) => (
-              <Card key={value.title} className="shadow-card animate-scale-in" style={{ animationDelay: `${index * 100}ms` }}>
-                <CardHeader>
-                  <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10">
-                    <value.icon className="h-7 w-7 text-accent" />
-                  </div>
-                  <CardTitle className="text-xl">{value.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{value.description}</p>
-                </CardContent>
-              </Card>
-            ))}
           </div>
 
           {/* Closing Line */}
