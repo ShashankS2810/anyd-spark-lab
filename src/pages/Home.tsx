@@ -12,6 +12,7 @@ import { toast } from 'sonner';
 import PromoPopup from '@/components/PromoPopup';
 import ReviewsCarousel from '@/components/ReviewsCarousel';
 import foundersImage from '@/assets/founders.jpeg';
+import teamImage from '@/assets/team.jpeg';
 
 
 const features = [
@@ -154,15 +155,27 @@ export default function Home() {
           </div>
 
           {/* Founders Image */}
-          <div className="mx-auto max-w-3xl mb-10 flex flex-col items-center">
-            <img
-              src={foundersImage}
-              alt="AnyD Founders – Dr. Seema, Dr. Shweta, and Dr. Parag Bhargawa"
-              className="w-full md:w-[65%] rounded-2xl shadow-elevated object-cover"
-            />
-            <p className="mt-3 text-sm text-muted-foreground text-center">
-              Founders – <span className="font-semibold text-accent">IIT Bombay Researchers</span>
-            </p>
+          <div className="mx-auto max-w-4xl mb-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="flex flex-col items-center animate-fade-in">
+              <img
+                src={foundersImage}
+                alt="AnyD Founders – Dr. Seema, Dr. Shweta, and Dr. Parag Bhargawa"
+                className="w-full aspect-[4/3] rounded-2xl shadow-elevated object-cover transition-transform duration-300 hover:scale-[1.03]"
+              />
+              <p className="mt-3 text-sm text-muted-foreground text-center">
+                Founders – <span className="font-semibold text-accent">IIT Bombay Researchers</span>
+              </p>
+            </div>
+            <div className="flex flex-col items-center animate-fade-in" style={{ animationDelay: '100ms' }}>
+              <img
+                src={teamImage}
+                alt="AnyD Team"
+                className="w-full aspect-[4/3] rounded-2xl shadow-elevated object-cover transition-transform duration-300 hover:scale-[1.03]"
+              />
+              <p className="mt-3 text-sm text-muted-foreground text-center">
+                <span className="font-semibold text-accent">Our Team</span>
+              </p>
+            </div>
           </div>
 
           {/* Innovation Milestone */}
