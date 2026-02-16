@@ -85,12 +85,12 @@ export default function Home() {
       <Hero />
 
       {/* Stats Section */}
-      <section className="py-24 bg-secondary">
+      <section className="py-14 bg-secondary">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-2 gap-12 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
             {stats.map((stat, index) => (
               <div key={stat.label} className="text-center animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
-                <div className="text-5xl font-bold text-primary mb-3">{stat.value}</div>
+                <div className="text-4xl font-bold text-primary mb-2">{stat.value}</div>
                 <div className="text-base text-muted-foreground">{stat.label}</div>
               </div>
             ))}
@@ -99,10 +99,10 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-32 bg-background">
+      <section className="py-16 bg-background">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center mb-20">
-            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-6">
+          <div className="mx-auto max-w-3xl text-center mb-12">
+            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-4">
               Why Choose AnyD?
             </h2>
             <p className="text-xl text-muted-foreground">
@@ -110,17 +110,17 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {features.map((feature, index) => (
               <Card key={feature.name} className="shadow-card transition-smooth hover:shadow-elevated hover:-translate-y-1 animate-scale-in p-2" style={{ animationDelay: `${index * 100}ms` }}>
                 <CardHeader>
-                  <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-lg bg-accent/10">
-                    <feature.icon className="h-7 w-7 text-accent" />
+                  <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
+                    <feature.icon className="h-6 w-6 text-accent" />
                   </div>
-                  <CardTitle className="text-2xl">{feature.name}</CardTitle>
+                  <CardTitle className="text-xl">{feature.name}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-lg leading-relaxed">{feature.description}</CardDescription>
+                  <CardDescription className="text-base leading-relaxed">{feature.description}</CardDescription>
                 </CardContent>
               </Card>
             ))}
@@ -129,10 +129,10 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 bg-secondary scroll-mt-20">
+      <section id="about" className="py-16 bg-secondary scroll-mt-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center mb-16">
-            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-6">
+          <div className="mx-auto max-w-3xl text-center mb-10">
+            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-4">
               About AnyD
             </h2>
             <p className="text-xl text-muted-foreground">
@@ -141,9 +141,9 @@ export default function Home() {
           </div>
 
           {/* Story */}
-          <div className="mx-auto max-w-3xl mb-16">
-            <h3 className="text-2xl font-bold tracking-tight text-foreground mb-6">Our Story</h3>
-            <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
+          <div className="mx-auto max-w-3xl mb-10">
+            <h3 className="text-2xl font-bold tracking-tight text-foreground mb-4">Our Story</h3>
+            <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
               <p>
                 AnyD was born from a simple but powerful conviction: <span className="text-foreground font-medium">curiosity is the foundation of lifelong learning</span>. Founded by <span className="text-foreground font-medium">Dr. Seema, Dr. Shweta, and Dr. Parag Bhargawa</span> — IIT Bombay researchers and professors — AnyD exists to close the gap between what children are taught and what they truly need to thrive in a technology-driven world.
               </p>
@@ -154,7 +154,7 @@ export default function Home() {
           </div>
 
           {/* Founders Image */}
-          <div className="mx-auto max-w-3xl mb-16 flex flex-col items-center">
+          <div className="mx-auto max-w-3xl mb-10 flex flex-col items-center">
             <img
               src={foundersImage}
               alt="AnyD Founders – Dr. Seema, Dr. Shweta, and Dr. Parag Bhargawa"
@@ -166,7 +166,7 @@ export default function Home() {
           </div>
 
           {/* Innovation Milestone */}
-          <div className="mx-auto max-w-3xl mb-16">
+          <div className="mx-auto max-w-3xl mb-10">
             <Card className="shadow-card border-accent/20 bg-accent/5">
               <CardHeader>
                 <Badge variant="secondary" className="w-fit mb-2">Innovation Milestone</Badge>
@@ -189,14 +189,14 @@ export default function Home() {
           </div>
 
           {/* Values */}
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
             {values.map((value, index) => (
               <Card key={value.title} className="shadow-card animate-scale-in" style={{ animationDelay: `${index * 100}ms` }}>
                 <CardHeader>
-                  <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-accent/10">
+                  <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10">
                     <value.icon className="h-7 w-7 text-accent" />
                   </div>
-                  <CardTitle className="text-2xl">{value.title}</CardTitle>
+                  <CardTitle className="text-xl">{value.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">{value.description}</p>
@@ -206,7 +206,7 @@ export default function Home() {
           </div>
 
           {/* Closing Line */}
-          <div className="mt-16 text-center">
+          <div className="mt-10 text-center">
             <p className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
               Research-driven. Hands-on. Future-ready.
             </p>
@@ -219,10 +219,10 @@ export default function Home() {
       <ReviewsCarousel />
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-secondary scroll-mt-20">
+      <section id="contact" className="py-16 bg-secondary scroll-mt-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center mb-16">
-            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-6">
+          <div className="mx-auto max-w-3xl text-center mb-10">
+            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-4">
               Get in Touch
             </h2>
             <p className="text-xl text-muted-foreground">
@@ -230,7 +230,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
             {/* Contact Form */}
             <div className="animate-fade-in">
               <Card className="shadow-elevated">

@@ -13,24 +13,24 @@ export function Hero() {
       <div className="absolute inset-0 gradient-hero opacity-95" />
       
       {/* Content */}
-      <div className="relative mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8">
-        <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-12 items-center">
+      <div className="relative mx-auto max-w-7xl px-6 py-20 sm:py-28 lg:px-8">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-12 items-center">
           {/* Text content */}
           <div className="animate-fade-in">
-            <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-5 py-2.5 mb-8 border border-accent/20">
+            <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-5 py-2.5 mb-6 border border-accent/20">
               <Sparkles className="h-5 w-5 text-accent" />
               <span className="text-base font-medium text-primary-foreground">Hands-On STEM Education for Young Innovators</span>
             </div>
             
-            <h1 className="text-5xl font-bold tracking-tight text-primary-foreground sm:text-7xl mb-8">
+            <h1 className="text-5xl font-bold tracking-tight text-primary-foreground sm:text-7xl mb-5">
               Why is '<span className="text-accent">Why</span>' important?
             </h1>
             
-            <p className="text-xl leading-9 text-primary-foreground/90 mb-8">
+            <p className="text-xl leading-9 text-primary-foreground/90 mb-6">
               At AnyD Materials, we believe every '<span className="font-semibold text-accent">Why</span>' ignites curiosity, turning questions into hands-on learning and creative discovery.
             </p>
 
-            <div className="inline-flex items-center gap-2.5 rounded-full bg-primary-foreground/10 backdrop-blur-sm px-5 py-2.5 mb-8 border border-primary-foreground/15 shadow-sm">
+            <div className="inline-flex items-center gap-2.5 rounded-full bg-primary-foreground/10 backdrop-blur-sm px-5 py-2.5 mb-6 border border-primary-foreground/15 shadow-sm">
               <Award className="h-5 w-5 text-accent" />
               <span className="text-base font-semibold text-primary-foreground">
                 Founded by <span className="text-accent">IIT Bombay</span> Researchers

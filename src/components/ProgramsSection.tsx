@@ -141,14 +141,14 @@ export default function ProgramsSection() {
   const [selectedProgram, setSelectedProgram] = useState<Program | null>(null);
 
   return (
-    <section id="programs" className="py-28 bg-background scroll-mt-20">
+    <section id="programs" className="py-16 bg-background scroll-mt-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
-        <div className="mx-auto max-w-3xl text-center mb-16">
-          <Badge variant="secondary" className="mb-4 text-sm px-4 py-1.5">
+        <div className="mx-auto max-w-3xl text-center mb-10">
+          <Badge variant="secondary" className="mb-3 text-sm px-4 py-1.5">
             What We Teach
           </Badge>
-          <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-5">
+          <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-3">
             Our Programs
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">

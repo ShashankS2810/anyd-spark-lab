@@ -48,11 +48,11 @@ const stats = [
 
 const ReviewsCarousel = () => {
   return (
-    <section id="reviews" className="py-24 bg-secondary scroll-mt-20">
+    <section id="reviews" className="py-16 bg-secondary scroll-mt-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
-        <div className="mx-auto max-w-3xl text-center mb-12">
-          <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-5">
+        <div className="mx-auto max-w-3xl text-center mb-8">
+          <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-4">
             What Parents Say
           </h2>
           <p className="text-xl text-muted-foreground">
@@ -61,7 +61,7 @@ const ReviewsCarousel = () => {
         </div>
 
         {/* Stats Strip */}
-        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mb-14">
+        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mb-10">
           {stats.map((stat) => {
             const Icon = stat.icon;
             return (
