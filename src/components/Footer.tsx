@@ -19,7 +19,10 @@ const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) =
 
 export function Footer() {
   return (
-    <footer className="bg-card border-t">
+    <footer className="relative border-t border-border bg-card">
+      {/* Subtle glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[2px] bg-gradient-to-r from-transparent via-neon-blue/50 to-transparent" />
+      
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {/* Brand */}
@@ -48,7 +51,7 @@ export function Footer() {
                   <a
                     href={item.href}
                     onClick={(e) => scrollToSection(e, item.href)}
-                    className="text-sm text-muted-foreground hover:text-accent transition-smooth cursor-pointer"
+                    className="text-sm text-muted-foreground hover:text-neon-blue transition-smooth cursor-pointer"
                   >
                     {item.name}
                   </a>
@@ -62,20 +65,20 @@ export function Footer() {
             <h3 className="text-sm font-semibold text-foreground mb-4">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Mail className="h-4 w-4 text-accent" />
-                <a href="mailto:info@anydmaterials.com" className="hover:text-accent transition-smooth">
+                <Mail className="h-4 w-4 text-neon-blue" />
+                <a href="mailto:info@anydmaterials.com" className="hover:text-neon-blue transition-smooth">
                   info@anydmaterials.com
                 </a>
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Phone className="h-4 w-4 text-accent" />
-                <a href="tel:+911234567890" className="hover:text-accent transition-smooth">
+                <Phone className="h-4 w-4 text-neon-blue" />
+                <a href="tel:+911234567890" className="hover:text-neon-blue transition-smooth">
                   +91 123 456 7890
                 </a>
               </li>
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
-                <MapPin className="h-4 w-4 text-accent mt-0.5" />
-                <a href="https://maps.google.com/?q=IIT+Bombay+Campus+Powai+Mumbai" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-smooth">IIT Bombay, Powai<br />Mumbai, India</a>
+                <MapPin className="h-4 w-4 text-neon-blue mt-0.5" />
+                <a href="https://maps.google.com/?q=IIT+Bombay+Campus+Powai+Mumbai" target="_blank" rel="noopener noreferrer" className="hover:text-neon-blue transition-smooth">IIT Bombay, Powai<br />Mumbai, India</a>
               </li>
             </ul>
           </div>

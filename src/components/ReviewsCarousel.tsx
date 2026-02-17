@@ -51,7 +51,7 @@ const whyNowCards = [
     icon: TrendingUp,
     text: (
       <>
-        <span className="font-bold text-accent">85 million jobs</span> may change or disappear by 2030 (World Economic Forum). Children who build problem-solving and STEM skills early adapt faster.
+        <span className="font-bold text-neon-blue">85 million jobs</span> may change or disappear by 2030 (World Economic Forum). Children who build problem-solving and STEM skills early adapt faster.
       </>
     ),
   },
@@ -59,7 +59,7 @@ const whyNowCards = [
     icon: BookOpen,
     text: (
       <>
-        <span className="font-bold text-accent">NEP 2020</span> emphasizes experiential and hands-on learning. AnyD follows this approach so children learn by doing, not memorizing.
+        <span className="font-bold text-neon-purple">NEP 2020</span> emphasizes experiential and hands-on learning. AnyD follows this approach so children learn by doing, not memorizing.
       </>
     ),
   },
@@ -75,13 +75,14 @@ const whyNowCards = [
 
 const ReviewsCarousel = () => {
   return (
-    <section id="reviews" className="py-16 bg-secondary scroll-mt-20">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="reviews" className="py-16 bg-card scroll-mt-20 relative overflow-hidden">
+      <div className="absolute inset-0 animated-grid opacity-20" />
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
 
         {/* Testimonials Header */}
         <div className="mx-auto max-w-3xl text-center mb-8">
-          <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-4">
-            What Parents Say
+          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl mb-4">
+            <span className="bg-gradient-to-r from-neon-pink to-neon-purple bg-clip-text text-transparent">What Parents Say</span>
           </h2>
           <p className="text-xl text-muted-foreground">
             Trusted by families across India. Here's why they love AnyD.
@@ -95,10 +96,10 @@ const ReviewsCarousel = () => {
             return (
               <div
                 key={stat.label}
-                className="flex items-center gap-3 rounded-2xl border border-border bg-card shadow-card px-5 py-3"
+                className="flex items-center gap-3 rounded-2xl glass px-5 py-3"
               >
-                <div className="h-10 w-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
-                  <Icon className="h-5 w-5 text-accent" />
+                <div className="h-10 w-10 rounded-xl bg-neon-blue/10 flex items-center justify-center flex-shrink-0">
+                  <Icon className="h-5 w-5 text-neon-blue" />
                 </div>
                 <div>
                   <div className="text-xl font-bold text-foreground leading-tight">{stat.value}</div>
@@ -114,14 +115,14 @@ const ReviewsCarousel = () => {
           {reviews.map((review, index) => (
             <Card
               key={review.name}
-              className="shadow-card hover:shadow-elevated hover:-translate-y-1 transition-all duration-300 animate-fade-in"
+              className="glass border-border/50 hover:shadow-glow-purple hover:-translate-y-1 transition-all duration-300 animate-fade-in"
               style={{ animationDelay: `${index * 80}ms` }}
             >
               <CardContent className="p-6">
-                <Quote className="h-6 w-6 text-accent/20 mb-3" />
+                <Quote className="h-6 w-6 text-neon-purple/30 mb-3" />
                 <div className="flex gap-1 mb-4">
                   {Array.from({ length: review.rating }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-accent text-accent" />
+                    <Star key={i} className="h-4 w-4 fill-neon-blue text-neon-blue" />
                   ))}
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-5">
@@ -138,9 +139,9 @@ const ReviewsCarousel = () => {
 
         {/* Why Now Sub-section */}
         <div className="mx-auto max-w-3xl text-center mb-10">
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-accent mb-2">Why Now</span>
-          <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-3">
-            Why Early STEM Exposure Matters
+          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-neon-green mb-2">Why Now</span>
+          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl mb-3">
+            <span className="bg-gradient-to-r from-neon-green to-neon-blue bg-clip-text text-transparent">Why Early STEM Exposure Matters</span>
           </h2>
           <p className="text-lg text-muted-foreground">
             The world is changing fast. The skills children build today shape the opportunities they'll have tomorrow.
@@ -153,12 +154,12 @@ const ReviewsCarousel = () => {
             return (
               <Card
                 key={index}
-                className="shadow-card animate-fade-in"
+                className="glass border-border/50 animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <CardContent className="flex items-start gap-4 p-5">
-                  <div className="h-10 w-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Icon className="h-5 w-5 text-accent" />
+                  <div className="h-10 w-10 rounded-xl bg-neon-green/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Icon className="h-5 w-5 text-neon-green" />
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed">{card.text}</p>
                 </CardContent>
