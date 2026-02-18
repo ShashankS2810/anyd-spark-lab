@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import anydLogo from '@/assets/anyd-logo.png';
@@ -33,7 +34,7 @@ export function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full glass-strong">
+    <header className="sticky top-0 z-50 w-full border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <a 
@@ -62,7 +63,7 @@ export function Navbar() {
               key={item.name}
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
-              className="text-sm font-semibold leading-6 transition-smooth relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-neon-blue after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100 text-muted-foreground hover:text-neon-blue cursor-pointer"
+              className="text-sm font-semibold leading-6 transition-smooth relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-accent after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100 text-foreground hover:text-accent cursor-pointer"
             >
               {item.name}
             </a>
@@ -75,7 +76,7 @@ export function Navbar() {
               const element = document.querySelector('#contact');
               if (element) element.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="gradient-accent text-white border-0 shadow-glow-blue hover:scale-105 transition-transform"
+            className="gradient-accent"
           >
             Get Started
           </Button>
@@ -90,7 +91,7 @@ export function Navbar() {
               className="absolute inset-0 bg-background/80 backdrop-blur-sm"
               onClick={() => setMobileMenuOpen(false)}
             />
-            <div className="absolute inset-y-0 right-0 w-full sm:max-w-sm overflow-hidden glass-strong px-6 py-6 animate-slide-in-right flex flex-col shadow-xl">
+            <div className="absolute inset-y-0 right-0 w-full sm:max-w-sm overflow-hidden bg-card text-card-foreground px-6 py-6 ring-1 ring-border animate-slide-in-right flex flex-col shadow-xl">
               <div className="flex items-center justify-between">
                 <a 
                   href="#home" 
@@ -116,7 +117,7 @@ export function Navbar() {
                       <a
                         href={item.href}
                         onClick={(e) => handleNavClick(e, item.href)}
-                        className="block rounded-lg px-3 py-3 text-base font-semibold leading-7 transition-smooth text-foreground hover:bg-neon-blue/10 hover:text-neon-blue cursor-pointer"
+                        className="block rounded-lg px-3 py-3 text-base font-semibold leading-7 transition-smooth text-foreground hover:bg-secondary cursor-pointer"
                       >
                         {item.name}
                       </a>
@@ -134,7 +135,7 @@ export function Navbar() {
                       if (element) element.scrollIntoView({ behavior: 'smooth' });
                     }, 100);
                   }}
-                  className="w-full gradient-accent text-white border-0"
+                  className="w-full gradient-accent"
                 >
                   Get Started
                 </Button>

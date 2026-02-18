@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Poppins', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,10 +51,6 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         'highlight-blue': "hsl(var(--highlight-blue))",
-        'neon-blue': "hsl(var(--neon-blue))",
-        'neon-purple': "hsl(var(--neon-purple))",
-        'neon-pink': "hsl(var(--neon-pink))",
-        'neon-green': "hsl(var(--neon-green))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -82,23 +78,6 @@ export default {
           "0%": { transform: "scale(0.95)", opacity: "0" },
           "100%": { transform: "scale(1)", opacity: "1" }
         },
-        "float": {
-          "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
-          "33%": { transform: "translateY(-10px) rotate(2deg)" },
-          "66%": { transform: "translateY(5px) rotate(-1deg)" },
-        },
-        "float-slow": {
-          "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
-          "50%": { transform: "translateY(-20px) rotate(3deg)" },
-        },
-        "pulse-glow": {
-          "0%, 100%": { opacity: "0.4" },
-          "50%": { opacity: "0.8" },
-        },
-        "orbit": {
-          "0%": { transform: "rotate(0deg) translateX(40px) rotate(0deg)" },
-          "100%": { transform: "rotate(360deg) translateX(40px) rotate(-360deg)" },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -106,10 +85,6 @@ export default {
         "fade-in": "fade-in 0.5s ease-out",
         "slide-in-right": "slide-in-right 0.3s ease-out",
         "scale-in": "scale-in 0.3s ease-out",
-        "float": "float 6s ease-in-out infinite",
-        "float-slow": "float-slow 8s ease-in-out infinite",
-        "pulse-glow": "pulse-glow 3s ease-in-out infinite",
-        "orbit": "orbit 12s linear infinite",
       },
     },
   },
