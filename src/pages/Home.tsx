@@ -137,8 +137,7 @@ export default function Home() {
               Pioneered by <span className="text-deep-wine">IIT Bombay</span> Researchers
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              AnyD is <span className="font-medium text-foreground">SINE IIT Bombay incubated</span> and founded by IIT professors.<br />
-              We provide hands-on STEM learning that builds real skills, curiosity, and confidence.
+              AnyD is <span className="font-medium text-foreground">SINE IIT Bombay incubated</span> – founded by IIT Professors <span className="font-medium text-foreground">Dr. Seema & Shweta, Dr. Parag Bhargava</span>. Mentored by IITians who believe <span className="font-medium text-foreground">curiosity + tech = future-ready kids</span>.
             </p>
           </div>
 
