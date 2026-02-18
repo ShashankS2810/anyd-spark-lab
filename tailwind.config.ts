@@ -51,6 +51,7 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         'highlight-blue': "hsl(var(--highlight-blue))",
+        'deep-wine': "hsl(var(--deep-wine))",
       },
       borderRadius: {
         lg: "var(--radius)",
