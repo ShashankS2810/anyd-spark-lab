@@ -102,16 +102,16 @@ export default function Home() {
             </Card>
 
             {/* Card 3 - Highlight */}
-            <Card className="shadow-elevated text-center p-6 border-2 border-deep-wine ring-1 ring-deep-wine/20 animate-scale-in" style={{ animationDelay: '200ms' }}>
+            <Card className="text-center p-6 border-2 border-deep-wine ring-2 ring-deep-wine/15 animate-scale-in hover:scale-[1.03] transition-all duration-300" style={{ animationDelay: '200ms', boxShadow: '0 8px 32px -8px hsl(348 70% 24% / 0.25)' }}>
               <CardContent className="pt-6">
-                <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-deep-wine/10">
+                <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-deep-wine/15 shadow-sm">
                   <Check className="h-7 w-7 text-deep-wine" />
                 </div>
-                <CardTitle className="text-lg mb-3 text-deep-wine">AnyD Advantage</CardTitle>
+                <CardTitle className="text-xl font-extrabold mb-3 text-deep-wine">AnyD Advantage</CardTitle>
                 <ul className="text-sm text-muted-foreground space-y-1.5 text-left">
-                  <li className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-deep-wine flex-shrink-0" /> 100% Hands-On</li>
-                  <li className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-deep-wine flex-shrink-0" /> IIT Bombay Designed</li>
-                  <li className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-deep-wine flex-shrink-0" /> Take-Home Projects</li>
+                  <li className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-deep-wine flex-shrink-0" /> 100% <span className="font-bold text-foreground">Hands-On</span></li>
+                  <li className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-deep-wine flex-shrink-0" /> <span className="font-bold text-foreground">IIT Bombay</span> Designed</li>
+                  <li className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-deep-wine flex-shrink-0" /> <span className="font-bold text-foreground">Take-Home Projects</span></li>
                 </ul>
               </CardContent>
             </Card>
@@ -144,10 +144,15 @@ export default function Home() {
 
           {/* Innovation Milestone */}
           <div className="mx-auto max-w-3xl mb-10">
-            <Card className="shadow-card border-deep-wine/20 bg-card">
-              <CardHeader>
-                <Badge variant="secondary" className="w-fit mb-2">Innovation Milestone</Badge>
-                <CardTitle className="text-2xl"><span className="text-deep-wine">India's First</span> Conductive Ink Pen</CardTitle>
+            <Card className="border-2 border-deep-wine/30 bg-card hover:scale-[1.01] transition-all duration-300 p-1" style={{ boxShadow: '0 8px 32px -8px hsl(348 70% 24% / 0.2)' }}>
+              <CardHeader className="flex flex-row items-start gap-4">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-deep-wine/10 flex-shrink-0 mt-1 shadow-sm">
+                  <Award className="h-6 w-6 text-deep-wine" />
+                </div>
+                <div>
+                  <Badge variant="secondary" className="w-fit mb-2">Innovation Milestone</Badge>
+                  <CardTitle className="text-2xl"><span className="text-deep-wine font-extrabold">India's First</span> <span className="text-deep-wine">Conductive Ink Pen</span></CardTitle>
+                </div>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">

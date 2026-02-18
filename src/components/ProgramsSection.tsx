@@ -165,9 +165,9 @@ export default function ProgramsSection() {
               <button
                 key={program.id}
                 onClick={() => setSelectedProgram(program)}
-                className="group relative text-left rounded-2xl border p-6 transition-all duration-300 cursor-pointer
-                  bg-card border-border shadow-card hover:shadow-elevated hover:-translate-y-1"
-                style={{ animationDelay: `${index * 60}ms` }}
+                className="group relative text-left rounded-2xl border border-accent/15 p-6 transition-all duration-300 cursor-pointer
+                  bg-card shadow-card hover:shadow-elevated hover:-translate-y-1 hover:border-accent/40"
+                style={{ animationDelay: `${index * 60}ms`, boxShadow: '0 4px 20px -4px hsl(2 51% 50% / 0.08)' }}
               >
                 {program.comingSoon && (
                   <Badge className="absolute top-4 right-4 bg-accent text-white text-xs px-2.5 py-0.5">
@@ -175,7 +175,7 @@ export default function ProgramsSection() {
                   </Badge>
                 )}
 
-                <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl transition-colors duration-300
+                <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl transition-colors duration-300 shadow-sm
                   bg-accent/10 text-accent group-hover:bg-accent/20">
                   <Icon className="h-7 w-7" />
                 </div>
