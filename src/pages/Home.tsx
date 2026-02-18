@@ -1,6 +1,6 @@
 import { Hero } from '@/components/Hero';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { BookOpen, Rocket, Users, Award, Clock, Mail, Phone, MapPin } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Award, Clock, Mail, Phone, MapPin, X, Check, GraduationCap, Rocket, Brain, Users } from 'lucide-react';
 import ProgramsSection from '@/components/ProgramsSection';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -15,34 +15,18 @@ import foundersImage from '@/assets/founders.jpeg';
 import teamImage from '@/assets/team.jpeg';
 
 
-const features = [
-  {
-    name: 'Learn from the Best',
-    description: 'Our curriculum is designed by IIT Bombay researchers and professors — the same minds shaping India\'s brightest engineers.',
-    icon: Award,
-  },
-  {
-    name: 'SINE-Backed Innovation',
-    description: 'Incubated at IIT Bombay\'s SINE — where India\'s most promising startups are built, mentored, and scaled.',
-    icon: Rocket,
-  },
-  {
-    name: '100% Hands-On Learning',
-    description: 'No rote learning. Every session is project-based, with real materials and mentorship included — children build, not just watch.',
-    icon: BookOpen,
-  },
-  {
-    name: 'Loved by 1,500+ Families',
-    description: 'A thriving community of parents and children who trust AnyD to keep their kids curious, confident, and future-ready.',
-    icon: Users,
-  },
-];
-
 const stats = [
   { label: 'Happy Families', value: '1,500+' },
   { label: 'Learning Levels', value: '2' },
   { label: 'IIT Bombay Experts', value: '10+' },
   { label: 'Hands-On Rate', value: '100%' },
+];
+
+const iconBadges = [
+  { icon: GraduationCap, text: 'IIT Bombay Researchers' },
+  { icon: Rocket, text: 'SINE Incubated' },
+  { icon: Brain, text: 'Hands-On Learning' },
+  { icon: Users, text: '1500+ Families' },
 ];
 
 
@@ -82,35 +66,64 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Tired of Basic STEM Section */}
       <section className="py-16 bg-background">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center mb-12">
-            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-4">
-              Why Choose AnyD?
+            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-2">
+              Tired of Basic School STEM?
             </h2>
-            <p className="text-xl md:text-2xl font-semibold text-foreground mb-3">
-              Tired of basic school STEM and theory-only learning?<br />
-              <span className="text-accent">Your child deserves</span> hands-on experiences that build real skills, confidence, and creativity.
-            </p>
-            <p className="text-sm text-muted-foreground tracking-wide">
-              Built by IIT Bombay researchers • Trusted by 1,500+ families • Designed to make every child fall in love with learning
+            <p className="text-3xl sm:text-4xl font-bold">
+              <span className="text-accent">Your Child Deserves More.</span>
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {features.map((feature, index) => (
-              <Card key={feature.name} className="shadow-card transition-smooth hover:shadow-elevated hover:-translate-y-1 animate-scale-in p-2" style={{ animationDelay: `${index * 100}ms` }}>
-                <CardHeader>
-                  <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
-                    <feature.icon className="h-6 w-6 text-accent" />
-                  </div>
-                  <CardTitle className="text-xl">{feature.name}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base leading-relaxed">{feature.description}</CardDescription>
-                </CardContent>
-              </Card>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 max-w-4xl mx-auto mb-14">
+            {/* Card 1 */}
+            <Card className="shadow-card text-center p-6 animate-scale-in">
+              <CardContent className="pt-6">
+                <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-destructive/10">
+                  <X className="h-7 w-7 text-destructive" />
+                </div>
+                <CardTitle className="text-lg mb-2">Theory Only</CardTitle>
+                <p className="text-sm text-muted-foreground">No real projects</p>
+              </CardContent>
+            </Card>
+
+            {/* Card 2 */}
+            <Card className="shadow-card text-center p-6 animate-scale-in" style={{ animationDelay: '100ms' }}>
+              <CardContent className="pt-6">
+                <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-destructive/10">
+                  <X className="h-7 w-7 text-destructive" />
+                </div>
+                <CardTitle className="text-lg mb-2">Boring Classes</CardTitle>
+                <p className="text-sm text-muted-foreground">Curiosity fades</p>
+              </CardContent>
+            </Card>
+
+            {/* Card 3 - Highlight */}
+            <Card className="shadow-elevated text-center p-6 border-2 border-deep-wine ring-1 ring-deep-wine/20 animate-scale-in" style={{ animationDelay: '200ms' }}>
+              <CardContent className="pt-6">
+                <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-deep-wine/10">
+                  <Check className="h-7 w-7 text-deep-wine" />
+                </div>
+                <CardTitle className="text-lg mb-3 text-deep-wine">AnyD Advantage</CardTitle>
+                <ul className="text-sm text-muted-foreground space-y-1.5 text-left">
+                  <li className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-deep-wine flex-shrink-0" /> 100% Hands-On</li>
+                  <li className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-deep-wine flex-shrink-0" /> IIT Bombay Designed</li>
+                  <li className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-deep-wine flex-shrink-0" /> Take-Home Projects</li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Icon Badges */}
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
+            {iconBadges.map((badge, index) => (
+              <div key={badge.text} className="flex items-center gap-2.5 bg-deep-wine/10 border border-deep-wine/20 rounded-full px-5 py-2.5 animate-fade-in" style={{ animationDelay: `${index * 80}ms` }}>
+                <badge.icon className="h-5 w-5 text-deep-wine" />
+                <span className="text-sm font-semibold text-foreground">{badge.text}</span>
+              </div>
             ))}
           </div>
         </div>
@@ -121,27 +134,38 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center mb-10">
             <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-4">
-              About AnyD
+              Pioneered by <span className="text-deep-wine">IIT Bombay</span> Researchers
             </h2>
-            <p className="text-xl text-muted-foreground">
-              Where IIT Bombay research meets real-world learning — for every young innovator.
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              AnyD is <span className="font-medium text-foreground">SINE IIT Bombay incubated</span> and founded by IIT professors.<br />
+              We provide hands-on STEM learning that builds real skills, curiosity, and confidence.
             </p>
           </div>
 
-          {/* Story */}
+          {/* Innovation Milestone */}
           <div className="mx-auto max-w-3xl mb-10">
-            <h3 className="text-2xl font-bold tracking-tight text-foreground mb-4">Our Story</h3>
-            <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
-              <p>
-                AnyD was born from a simple but powerful conviction: <span className="text-foreground font-medium">curiosity is the foundation of lifelong learning</span>. Founded by <span className="text-foreground font-medium">Dr. Seema, Dr. Shweta, and Dr. Parag Bhargawa</span> — IIT Bombay researchers and professors — AnyD exists to close the gap between what children are taught and what they truly need to thrive in a technology-driven world.
-              </p>
-              <p>
-                Incubated at <span className="text-foreground font-medium">SINE, IIT Bombay</span>, and mentored by a network of IITians, we bring research-grade rigour to every session — while keeping the experience fun, accessible, and genuinely hands-on. Our founders believe that early exposure to technology doesn't just prepare children for the future — it empowers them to shape it.
-              </p>
-            </div>
+            <Card className="shadow-card border-deep-wine/20 bg-card">
+              <CardHeader>
+                <Badge variant="secondary" className="w-fit mb-2">Innovation Milestone</Badge>
+                <CardTitle className="text-2xl"><span className="text-deep-wine">India's First</span> Conductive Ink Pen</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">
+                  AnyD introduced the concept of <span className="text-foreground font-medium">electricity on paper</span> — making it possible for children to draw circuits that actually work.
+                </p>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-muted-foreground">
+                  {['Simplified complex science into hands-on exploration', 'Introduced electricity on paper for the first time in India', 'Encouraged real-world experimentation from day one', 'A breakthrough born from IIT Bombay research'].map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <Award className="h-4 w-4 text-deep-wine mt-0.5 flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
           </div>
 
-          {/* Founders Image */}
+          {/* Founders & Team Images */}
           <div className="mx-auto max-w-4xl mb-10 grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="flex flex-col items-center animate-fade-in">
               <img
@@ -150,7 +174,7 @@ export default function Home() {
                 className="w-full aspect-[4/3] rounded-2xl shadow-elevated object-cover transition-transform duration-300 hover:scale-[1.03]"
               />
               <p className="mt-3 text-sm text-muted-foreground text-center">
-                Founders – <span className="font-semibold text-accent">IIT Bombay Researchers</span>
+                Founders – <span className="font-semibold text-deep-wine">IIT Bombay Researchers</span>
               </p>
             </div>
             <div className="flex flex-col items-center animate-fade-in" style={{ animationDelay: '100ms' }}>
@@ -160,39 +184,9 @@ export default function Home() {
                 className="w-full aspect-[4/3] rounded-2xl shadow-elevated object-cover transition-transform duration-300 hover:scale-[1.03]"
               />
               <p className="mt-3 text-sm text-muted-foreground text-center">
-                <span className="font-semibold text-accent">Our Team</span>
+                <span className="font-semibold text-deep-wine">Our Team</span>
               </p>
             </div>
-          </div>
-
-          {/* Innovation Milestone */}
-          <div className="mx-auto max-w-3xl mb-10">
-            <Card className="shadow-card border-accent/20 bg-accent/5">
-              <CardHeader>
-                <Badge variant="secondary" className="w-fit mb-2">Innovation Milestone</Badge>
-                <CardTitle className="text-2xl">India's First Conductive Ink Pen</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  AnyD introduced the concept of <span className="text-foreground font-medium">electricity on paper</span> — making it possible for children to draw circuits that actually work.
-                </p>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-muted-foreground">
-                  {['Simplified complex science into hands-on exploration', 'Introduced electricity on paper for the first time in India', 'Encouraged real-world experimentation from day one', 'A breakthrough born from IIT Bombay research'].map((item) => (
-                    <li key={item} className="flex items-start gap-2">
-                      <Award className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Closing Line */}
-          <div className="mt-10 text-center">
-            <p className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-              Research-driven. Hands-on. Future-ready.
-            </p>
           </div>
         </div>
       </section>
@@ -219,9 +213,9 @@ export default function Home() {
               <Card className="shadow-elevated">
                 <CardHeader>
                   <CardTitle className="text-2xl">Send Us a Message</CardTitle>
-                  <CardDescription>
+                  <p className="text-sm text-muted-foreground">
                     Fill out the form below and we'll respond within 24 hours.
-                  </CardDescription>
+                  </p>
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleSubmit} className="space-y-6">

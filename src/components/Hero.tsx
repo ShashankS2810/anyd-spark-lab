@@ -31,12 +31,12 @@ export function Hero() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-5">
-              <Button size="lg" className="gradient-accent shadow-elevated text-lg px-10 py-7 font-bold tracking-wide ring-2 ring-accent/30 ring-offset-2 ring-offset-transparent hover:scale-105 transition-transform duration-200" onClick={() => scrollToSection('programs')}>
+              <Button size="lg" className="bg-deep-wine text-white shadow-lg hover:shadow-[0_0_20px_hsl(var(--deep-wine-glow))] hover:scale-105 transition-all duration-200 text-lg px-10 py-7 font-bold tracking-wide rounded-xl" onClick={() => scrollToSection('programs')}>
                 Explore Programs
                 <ArrowRight className="ml-2 h-6 w-6 animate-bounce" />
               </Button>
-              <Button size="lg" variant="outline" className="bg-card/10 border-primary-foreground/20 text-primary-foreground hover:bg-card/20 backdrop-blur text-lg px-8 py-6" onClick={() => scrollToSection('contact')}>
-                Get in Touch
+              <Button size="lg" className="bg-deep-wine/80 text-white hover:bg-deep-wine hover:shadow-[0_0_20px_hsl(var(--deep-wine-glow))] backdrop-blur transition-all duration-200 text-lg px-8 py-6 rounded-xl" onClick={() => scrollToSection('contact')}>
+                Get Started
               </Button>
             </div>
           </div>
