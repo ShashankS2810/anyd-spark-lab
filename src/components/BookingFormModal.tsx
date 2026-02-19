@@ -147,7 +147,7 @@ export default function BookingFormModal({ open, onOpenChange, programName }: Bo
 
             <Button
               type="submit"
-              className="w-full bg-deep-wine hover:bg-deep-wine/90 text-white text-lg font-bold rounded-xl h-12 mt-2 shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+              className="w-full bg-deep-wine hover:bg-deep-wine/85 text-white text-lg font-bold rounded-xl h-12 mt-2 shadow-lg hover:-translate-y-0.5 transition-all duration-200"
             >
               Book My Seat
             </Button>
