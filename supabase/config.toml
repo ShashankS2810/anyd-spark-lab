@@ -1,1 +1,7 @@
 project_id = "nlgkipokbssnpbqvrdek"
+
+[functions.submit-contact]
+verify_jwt = false
+
+[functions.submit-booking]
+verify_jwt = false
