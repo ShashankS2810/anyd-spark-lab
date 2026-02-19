@@ -85,10 +85,10 @@ export default function Home() {
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 max-w-4xl mx-auto mb-14">
             {/* Card 1 */}
-            <Card className="shadow-card text-center p-6 animate-scale-in">
+            <Card className="bg-white shadow-sm text-center p-6 animate-scale-in border border-border/50">
               <CardContent className="pt-6">
-                <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-white border border-destructive/20 shadow-sm">
-                  <X className="h-7 w-7 text-destructive" />
+                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-destructive/30">
+                  <X className="h-5 w-5 text-destructive" strokeWidth={2.5} />
                 </div>
                 <CardTitle className="text-lg mb-2">Theory Only</CardTitle>
                 <p className="text-sm text-muted-foreground">No real projects</p>
@@ -96,10 +96,10 @@ export default function Home() {
             </Card>
 
             {/* Card 2 */}
-            <Card className="shadow-card text-center p-6 animate-scale-in" style={{ animationDelay: '100ms' }}>
+            <Card className="bg-white shadow-sm text-center p-6 animate-scale-in border border-border/50" style={{ animationDelay: '100ms' }}>
               <CardContent className="pt-6">
-                <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-white border border-destructive/20 shadow-sm">
-                  <X className="h-7 w-7 text-destructive" />
+                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-destructive/30">
+                  <X className="h-5 w-5 text-destructive" strokeWidth={2.5} />
                 </div>
                 <CardTitle className="text-lg mb-2">Boring Classes</CardTitle>
                 <p className="text-sm text-muted-foreground">Curiosity fades</p>
@@ -107,10 +107,10 @@ export default function Home() {
             </Card>
 
             {/* Card 3 - Highlight */}
-            <Card className="text-center p-6 border-2 border-deep-wine ring-2 ring-deep-wine/15 animate-scale-in hover:scale-[1.03] transition-all duration-300" style={{ animationDelay: '200ms', boxShadow: '0 8px 32px -8px hsl(348 70% 24% / 0.25)' }}>
+            <Card className="bg-white text-center p-6 border-2 border-deep-wine shadow-md animate-scale-in hover:scale-[1.03] transition-all duration-300" style={{ animationDelay: '200ms' }}>
               <CardContent className="pt-6">
-                <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-white border border-green-200 shadow-sm">
-                  <Check className="h-7 w-7 text-green-600" />
+                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-green-400/40">
+                  <Check className="h-5 w-5 text-green-600" strokeWidth={2.5} />
                 </div>
                 <CardTitle className="text-xl font-extrabold mb-3 text-deep-wine">AnyD Advantage</CardTitle>
                 <ul className="text-sm text-muted-foreground space-y-1.5 text-left">
