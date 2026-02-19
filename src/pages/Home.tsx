@@ -17,7 +17,7 @@ import teamImage from '@/assets/team.jpeg';
 
 const stats = [
   { label: 'Happy Families', value: '1,500+' },
-  { label: 'IIT Bombay Experts', value: '10+' },
+  { label: 'Researchers from IIT Bombay', value: '20+' },
   { label: 'Hands-On Rate', value: '100%' },
 ];
 
@@ -60,11 +60,11 @@ export default function Home() {
       {/* Stats Section */}
       <section className="py-14 bg-secondary">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-8">
             {stats.map((stat, index) => (
-              <div key={stat.label} className="text-center animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
-                <div className="text-4xl font-bold text-primary mb-2">{stat.value}</div>
-                <div className="text-base text-muted-foreground">{stat.label}</div>
+              <div key={stat.label} className="text-center animate-fade-in px-4 sm:px-0" style={{ animationDelay: `${index * 100}ms` }}>
+                <div className="text-4xl font-bold text-primary mb-3">{stat.value}</div>
+                <div className="text-base text-muted-foreground leading-relaxed max-w-[200px] mx-auto">{stat.label}</div>
               </div>
             ))}
           </div>
