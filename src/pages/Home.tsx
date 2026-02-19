@@ -68,7 +68,7 @@ export default function Home() {
       <section className="py-16 bg-background">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center mb-12">
-            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-2">
+            <h2 className="text-4xl font-bold tracking-tight text-deep-wine sm:text-5xl mb-2">
               Tired of Basic School STEM?
             </h2>
             <p className="text-3xl sm:text-4xl font-bold text-[hsl(var(--hero-accent))]">
