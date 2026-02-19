@@ -62,20 +62,20 @@ const ReviewsCarousel = () => {
           </p>
         </div>
 
-        <Card className="shadow-elevated transition-all duration-300 animate-fade-in" key={current}>
+        <Card className="bg-white border-2 border-deep-wine/30 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_hsl(348_70%_24%/0.25)] animate-fade-in" key={current} style={{ boxShadow: '0 4px 20px -6px hsl(348 70% 24% / 0.15)' }}>
           <CardContent className="p-8 md:p-10 text-center">
-            <Quote className="h-8 w-8 text-accent/30 mx-auto mb-4" />
+            <Quote className="h-8 w-8 text-deep-wine/60 mx-auto mb-4" />
             <div className="flex justify-center gap-1 mb-5">
               {Array.from({ length: review.rating }).map((_, i) => (
                 <Star key={i} className="h-5 w-5 fill-accent text-accent" />
               ))}
             </div>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+            <p className="text-lg text-deep-wine leading-relaxed mb-6">
               "{review.text}"
             </p>
             <div className="border-t border-border pt-5">
-              <div className="font-semibold text-foreground">{review.name}</div>
-              <div className="text-sm text-muted-foreground">Parent of {review.childAge}</div>
+              <div className="font-semibold text-deep-wine">{review.name}</div>
+              <div className="text-sm text-deep-wine/70">Parent of {review.childAge}</div>
             </div>
           </CardContent>
         </Card>
