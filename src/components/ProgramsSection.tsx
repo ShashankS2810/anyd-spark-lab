@@ -323,7 +323,7 @@ export default function ProgramsSection() {
                     {/* CTA */}
                     <div className="flex justify-center pt-2">
                       <Button
-                        className="gradient-accent shadow-elevated text-lg px-10 py-6 rounded-xl hover:scale-105 transition-transform duration-200"
+                        className="w-full bg-deep-wine hover:bg-deep-wine/85 text-white text-lg font-bold px-10 py-4 rounded-xl shadow-lg hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-4px_hsl(348_70%_24%/0.35)] transition-all duration-200"
                         onClick={() => { setSelectedProgram(null); setBookingProgram(selectedProgram.title); }}
                       >
                         Book a Seat
