@@ -148,7 +148,7 @@ export default function Home() {
             <div className="animate-fade-in">
               <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-3">About Us</p>
               <h2 className="text-4xl font-bold tracking-tight sm:text-5xl mb-5 text-deep-wine">
-              Pioneered by <span className="text-accent">IIT Bombay</span> Researchers
+              Pioneered by <span className="text-[hsl(var(--hero-accent))] font-bold">IIT Bombay</span> Researchers
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-xl mb-8">
                 AnyD is <span className="font-semibold text-foreground">SINE IIT Bombay incubated</span> – founded by IIT Profs <span className="font-semibold text-foreground">Dr. Seema & Dr. Shweta, Dr. Parag Bhargava</span>. Mentored by IITians who believe <em>curiosity + tech = future-ready kids</em>.
