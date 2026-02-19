@@ -170,7 +170,7 @@ export default function ProgramsSection() {
                 style={{ animationDelay: `${index * 60}ms`, boxShadow: '0 4px 20px -4px hsl(2 51% 50% / 0.08)' }}
               >
                 {program.comingSoon && (
-                  <Badge className="absolute top-4 right-4 bg-accent text-deep-wine text-xs px-2.5 py-0.5">
+                  <Badge className="absolute top-4 right-4 bg-accent text-white text-xs px-2.5 py-0.5">
                     Coming Soon
                   </Badge>
                 )}
