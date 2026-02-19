@@ -35,14 +35,14 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <a 
             href="#home" 
             onClick={(e) => scrollToSection(e, '#home')}
             className="-m-1.5 p-1.5 flex items-center group"
           >
-            <img src={anydLogo} alt="AnyD Materials Logo" width="924" height="362" className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto transition-smooth group-hover:opacity-80" />
+            <img src={anydLogo} alt="AnyD Materials Logo" width="924" height="362" className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto transition-smooth group-hover:opacity-80" />
           </a>
         </div>
         
@@ -76,7 +76,7 @@ export function Navbar() {
               const element = document.querySelector('#contact');
               if (element) element.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="gradient-accent"
+            className="bg-deep-wine text-white hover:bg-deep-wine/85 transition-all duration-300 hover:shadow-md"
           >
             Get Started
           </Button>
@@ -135,7 +135,7 @@ export function Navbar() {
                       if (element) element.scrollIntoView({ behavior: 'smooth' });
                     }, 100);
                   }}
-                  className="w-full gradient-accent"
+                  className="w-full bg-deep-wine text-white hover:bg-deep-wine/85 transition-all duration-300 hover:shadow-md"
                 >
                   Get Started
                 </Button>
