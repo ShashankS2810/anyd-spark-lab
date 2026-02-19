@@ -52,6 +52,7 @@ export default {
         },
         'highlight-blue': "hsl(var(--highlight-blue))",
         'deep-wine': "hsl(var(--deep-wine))",
+        'hero-accent': "hsl(var(--hero-accent))",
       },
       borderRadius: {
         lg: "var(--radius)",

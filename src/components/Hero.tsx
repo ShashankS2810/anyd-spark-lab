@@ -10,40 +10,41 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 gradient-hero opacity-95" />
+      <div className="absolute inset-0 gradient-hero" />
       
       {/* Content */}
       <div className="relative mx-auto max-w-7xl px-6 py-20 sm:py-28 lg:px-8">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-12 items-center">
           {/* Text content */}
           <div className="animate-fade-in">
-            <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-1.5 mb-6 border border-accent/20">
-              <Award className="h-4 w-4 text-accent" />
-              <span className="text-xs font-bold uppercase tracking-widest text-primary-foreground">IIT Bombay SINE Incubated</span>
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 mb-6 border border-white/20">
+              <Award className="h-4 w-4 text-[hsl(var(--hero-accent))]" />
+              <span className="text-xs font-bold uppercase tracking-widest text-white/90">IIT Bombay SINE Incubated</span>
             </div>
             
-            <h1 className="text-5xl font-bold tracking-tight text-primary-foreground sm:text-7xl mb-5">
-              Unlock Future-Ready Skills: <span className="text-accent">Hands-On STEM</span> for Curious Kids 6–14
+            <h1 className="text-5xl font-bold tracking-tight text-white sm:text-7xl mb-5">
+              Unlock Future-Ready Skills: <span className="text-[hsl(var(--hero-accent))]">Hands-On STEM</span> for Curious Kids 6–14
             </h1>
             
-            <p className="text-xl leading-9 text-primary-foreground/90 mb-6">
+            <p className="text-xl leading-9 text-white/75 mb-6">
               1500+ Thriving Parents • Build, Print & Take Home Real Projects
             </p>
             
             <div className="flex flex-col sm:flex-row gap-5">
-              <Button size="lg" className="bg-deep-wine text-white shadow-lg hover:shadow-[0_0_20px_hsl(var(--deep-wine-glow))] hover:scale-105 transition-all duration-200 text-lg px-10 py-7 font-bold tracking-wide rounded-xl" onClick={() => scrollToSection('programs')}>
+              <Button size="lg" className="bg-[hsl(var(--hero-accent))] text-white shadow-lg hover:bg-[hsl(28,100%,48%)] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 text-lg px-10 py-7 font-bold tracking-wide rounded-xl" onClick={() => scrollToSection('programs')}>
                 Explore Programs
-                <ArrowRight className="ml-2 h-6 w-6 animate-bounce" />
+                <ArrowRight className="ml-2 h-6 w-6" />
               </Button>
-              <Button size="lg" className="bg-deep-wine/80 text-white hover:bg-deep-wine hover:shadow-[0_0_20px_hsl(var(--deep-wine-glow))] backdrop-blur transition-all duration-200 text-lg px-8 py-6 rounded-xl" onClick={() => scrollToSection('contact')}>
+              <Button size="lg" className="bg-[hsl(var(--hero-accent))]/90 text-white hover:bg-[hsl(28,100%,48%)] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 text-lg px-8 py-6 font-bold rounded-xl shadow-md" onClick={() => scrollToSection('contact')}>
                 Get Started
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
           </div>
 
           {/* Image */}
           <div className="relative animate-scale-in">
-            <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-elevated border border-primary-foreground/10">
+            <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-elevated border border-white/10">
               <video
                 src={heroVideo}
                 autoPlay
@@ -55,8 +56,8 @@ export function Hero() {
               />
             </div>
             {/* Decorative elements */}
-            <div className="absolute -top-4 -right-4 h-24 w-24 rounded-full bg-accent/20 blur-2xl" />
-            <div className="absolute -bottom-4 -left-4 h-32 w-32 rounded-full bg-accent/10 blur-3xl" />
+            <div className="absolute -top-4 -right-4 h-24 w-24 rounded-full bg-[hsl(var(--hero-accent))]/20 blur-2xl" />
+            <div className="absolute -bottom-4 -left-4 h-32 w-32 rounded-full bg-[hsl(var(--hero-accent))]/10 blur-3xl" />
           </div>
         </div>
       </div>
