@@ -56,39 +56,39 @@ export default function BookingFormModal({ open, onOpenChange, programName }: Bo
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-md rounded-2xl border-deep-wine/20 bg-[hsl(348,40%,97%)] p-0 overflow-hidden">
-        <div className="p-6 md:p-8">
-          <DialogHeader className="mb-5">
+      <DialogContent className="w-[95vw] sm:w-[90vw] lg:max-w-[520px] max-h-[90vh] rounded-[22px] border-deep-wine/20 bg-[hsl(348,40%,97%)] p-0 overflow-hidden flex flex-col">
+        <div className="p-5 sm:p-6 md:p-8 overflow-y-auto flex-1">
+          <DialogHeader className="mb-4 sm:mb-5">
             <div className="flex justify-center mb-3">
-              <Badge className="bg-deep-wine/10 text-deep-wine border-0 text-sm px-4 py-1.5 rounded-full font-medium">
+              <Badge className="bg-deep-wine/10 text-deep-wine border-0 text-xs sm:text-sm px-3 sm:px-4 py-1 sm:py-1.5 rounded-full font-medium">
                 Booking for: {programName} Program
               </Badge>
             </div>
-            <DialogTitle className="text-2xl font-bold text-deep-wine text-center">
+            <DialogTitle className="text-xl sm:text-2xl font-bold text-deep-wine text-center">
               Book a Seat
             </DialogTitle>
-            <DialogDescription className="text-center text-muted-foreground">
+            <DialogDescription className="text-center text-muted-foreground text-sm">
               Fill in the details below and we'll confirm your spot.
             </DialogDescription>
           </DialogHeader>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
             <div className="space-y-1.5">
-              <Label htmlFor="studentName" className="text-deep-wine font-medium">Student Name</Label>
+              <Label htmlFor="studentName" className="text-deep-wine font-medium text-sm">Student Name</Label>
               <Input
                 ref={firstInputRef}
                 id="studentName"
                 value={studentName}
                 onChange={(e) => setStudentName(e.target.value)}
                 placeholder="Enter student's name"
-                className="bg-white border-border focus-visible:ring-accent focus-visible:border-accent rounded-xl h-11"
+                className="bg-white border-border focus-visible:ring-accent focus-visible:border-accent rounded-xl h-10 sm:h-11 text-sm"
               />
             </div>
 
             <div className="space-y-1.5">
-              <Label htmlFor="ageGroup" className="text-deep-wine font-medium">Age Group</Label>
+              <Label htmlFor="ageGroup" className="text-deep-wine font-medium text-sm">Age Group</Label>
               <Select value={ageGroup} onValueChange={setAgeGroup}>
-                <SelectTrigger id="ageGroup" className="bg-white border-border focus:ring-accent rounded-xl h-11">
+                <SelectTrigger id="ageGroup" className="bg-white border-border focus:ring-accent rounded-xl h-10 sm:h-11 text-sm">
                   <SelectValue placeholder="Select age group" />
                 </SelectTrigger>
                 <SelectContent className="bg-white z-[100]">
@@ -99,18 +99,18 @@ export default function BookingFormModal({ open, onOpenChange, programName }: Bo
             </div>
 
             <div className="space-y-1.5">
-              <Label htmlFor="parentName" className="text-deep-wine font-medium">Parent Name</Label>
+              <Label htmlFor="parentName" className="text-deep-wine font-medium text-sm">Parent Name</Label>
               <Input
                 id="parentName"
                 value={parentName}
                 onChange={(e) => setParentName(e.target.value)}
                 placeholder="Enter parent's name"
-                className="bg-white border-border focus-visible:ring-accent focus-visible:border-accent rounded-xl h-11"
+                className="bg-white border-border focus-visible:ring-accent focus-visible:border-accent rounded-xl h-10 sm:h-11 text-sm"
               />
             </div>
 
             <div className="space-y-1.5">
-              <Label htmlFor="parentNumber" className="text-deep-wine font-medium">
+              <Label htmlFor="parentNumber" className="text-deep-wine font-medium text-sm">
                 Parent Number (WhatsApp) <span className="text-accent">*</span>
               </Label>
               <Input
@@ -120,37 +120,39 @@ export default function BookingFormModal({ open, onOpenChange, programName }: Bo
                 onChange={(e) => setParentNumber(e.target.value)}
                 placeholder="Enter WhatsApp number"
                 required
-                className="bg-white border-border focus-visible:ring-accent focus-visible:border-accent rounded-xl h-11"
+                className="bg-white border-border focus-visible:ring-accent focus-visible:border-accent rounded-xl h-10 sm:h-11 text-sm"
               />
             </div>
 
             <div className="space-y-1.5">
-              <Label htmlFor="email" className="text-deep-wine font-medium">Email</Label>
+              <Label htmlFor="email" className="text-deep-wine font-medium text-sm">Email</Label>
               <Input
                 id="email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter email address"
-                className="bg-white border-border focus-visible:ring-accent focus-visible:border-accent rounded-xl h-11"
+                className="bg-white border-border focus-visible:ring-accent focus-visible:border-accent rounded-xl h-10 sm:h-11 text-sm"
               />
             </div>
 
             <div className="space-y-1.5">
-              <Label className="text-deep-wine font-medium">Selected Program</Label>
+              <Label className="text-deep-wine font-medium text-sm">Selected Program</Label>
               <Input
                 value={programName}
                 readOnly
-                className="bg-deep-wine/5 border-deep-wine/15 text-deep-wine font-medium rounded-xl h-11 cursor-default"
+                className="bg-deep-wine/5 border-deep-wine/15 text-deep-wine font-medium rounded-xl h-10 sm:h-11 cursor-default text-sm"
               />
             </div>
 
-            <Button
-              type="submit"
-              className="w-full bg-deep-wine hover:bg-deep-wine/85 text-white text-lg font-bold rounded-xl h-12 mt-2 shadow-lg hover:-translate-y-0.5 transition-all duration-200"
-            >
-              Book My Seat
-            </Button>
+            <div className="pt-1 sm:pt-2 sticky bottom-0 bg-[hsl(348,40%,97%)]">
+              <Button
+                type="submit"
+                className="w-full bg-deep-wine hover:bg-deep-wine/85 text-white text-base sm:text-lg font-bold rounded-xl h-11 sm:h-12 shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+              >
+                Book My Seat
+              </Button>
+            </div>
           </form>
         </div>
       </DialogContent>
