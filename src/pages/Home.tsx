@@ -186,15 +186,15 @@ export default function Home() {
                 </div>
                 <div className="grid grid-cols-3 gap-4 text-center">
                   <div>
-                    <div className="text-2xl sm:text-3xl font-bold text-accent">100%</div>
+                    <div className="text-3xl sm:text-4xl font-extrabold text-[hsl(var(--hero-accent))]">100%</div>
                     <div className="text-sm text-white/70 mt-1">Hands-On</div>
                   </div>
                   <div>
-                    <div className="text-2xl sm:text-3xl font-bold text-accent">5.0</div>
+                    <div className="text-3xl sm:text-4xl font-extrabold text-[hsl(var(--hero-accent))]">5.0</div>
                     <div className="text-sm text-white/70 mt-1">Google Rating</div>
                   </div>
                   <div>
-                    <div className="text-2xl sm:text-3xl font-bold text-accent">6–14</div>
+                    <div className="text-3xl sm:text-4xl font-extrabold text-[hsl(var(--hero-accent))]">6–14</div>
                     <div className="text-sm text-white/70 mt-1">Age Group</div>
                   </div>
                 </div>
