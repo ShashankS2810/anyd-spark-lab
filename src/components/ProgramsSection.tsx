@@ -285,12 +285,7 @@ export default function ProgramsSection() {
                     <div className={`grid grid-cols-1 ${hasSidePanel ? '' : 'md:grid-cols-2'} gap-4 mb-8`}>
                       {/* Age 6-8 */}
                       <div className="rounded-xl bg-secondary p-5 border border-border">
-                        <div className="flex items-center gap-2 mb-3">
-                          <div className="h-8 w-8 rounded-full bg-accent/15 flex items-center justify-center">
-                            <span className="text-xs font-bold text-accent">6–8</span>
-                          </div>
-                          <h4 className="text-lg font-semibold text-foreground">Age 6–8</h4>
-                        </div>
+                        <h4 className="text-lg font-semibold text-foreground mb-3">Age 6–8</h4>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           {selectedProgram.comingSoon && (
                             <Badge variant="outline" className="mr-2 text-xs border-accent/30 text-accent mb-1">
@@ -303,12 +298,7 @@ export default function ProgramsSection() {
 
                       {/* Age 9-14 */}
                       <div className="rounded-xl bg-secondary p-5 border border-border">
-                        <div className="flex items-center gap-2 mb-3">
-                          <div className="h-8 w-8 rounded-full bg-accent/15 flex items-center justify-center">
-                            <span className="text-xs font-bold text-accent">9–14</span>
-                          </div>
-                          <h4 className="text-lg font-semibold text-foreground">Age 9–14</h4>
-                        </div>
+                        <h4 className="text-lg font-semibold text-foreground mb-3">Age 9–14</h4>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           {selectedProgram.comingSoon && (
                             <Badge variant="outline" className="mr-2 text-xs border-accent/30 text-accent mb-1">
