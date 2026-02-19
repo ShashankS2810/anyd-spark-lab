@@ -175,8 +175,8 @@ export default function ProgramsSection() {
                   </Badge>
                 )}
 
-                <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl transition-colors duration-300 shadow-sm
-                  bg-accent/10 text-accent group-hover:bg-accent/20">
+                <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl transition-colors duration-300 shadow-sm border border-accent/15
+                  bg-white text-accent group-hover:bg-accent/10">
                   <Icon className="h-7 w-7" />
                 </div>
 
@@ -344,7 +344,7 @@ export default function ProgramsSection() {
                   {index > 0 && (
                     <div className="hidden md:block h-5 w-px bg-border -ml-4 mr-1.5" />
                   )}
-                  <div className="h-8 w-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                  <div className="h-8 w-8 rounded-lg bg-white flex items-center justify-center flex-shrink-0 shadow-sm border border-accent/15">
                     <ProofIcon className="h-4 w-4 text-accent" />
                   </div>
                   <span className="text-sm font-medium text-foreground whitespace-nowrap">{item.text}</span>

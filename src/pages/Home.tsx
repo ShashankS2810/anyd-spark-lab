@@ -1,6 +1,6 @@
 import { Hero } from '@/components/Hero';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Award, Clock, Mail, Phone, MapPin, X, Check, GraduationCap, Rocket, Brain, Users } from 'lucide-react';
+import { Award, Clock, Mail, Phone, MapPin, X, Check, GraduationCap, Rocket, Brain, Users, Star } from 'lucide-react';
 import ProgramsSection from '@/components/ProgramsSection';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -17,7 +17,6 @@ import teamImage from '@/assets/team.jpeg';
 
 const stats = [
   { label: 'Happy Families', value: '1,500+' },
-  { label: 'Learning Levels', value: '2' },
   { label: 'IIT Bombay Experts', value: '10+' },
   { label: 'Hands-On Rate', value: '100%' },
 ];
@@ -29,6 +28,12 @@ const iconBadges = [
   { icon: Users, text: '1500+ Families' },
 ];
 
+const aboutStats = [
+  { value: '1500+', label: 'Parents Trust AnyD' },
+  { value: '100%', label: 'Hands-On' },
+  { value: '5.0', label: 'Google Rating', icon: Star },
+  { value: '6–14', label: 'Age Group' },
+];
 
 
 const scrollToSection = (id: string) => {
@@ -55,7 +60,7 @@ export default function Home() {
       {/* Stats Section */}
       <section className="py-14 bg-secondary">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
+          <div className="grid grid-cols-3 gap-8">
             {stats.map((stat, index) => (
               <div key={stat.label} className="text-center animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
                 <div className="text-4xl font-bold text-primary mb-2">{stat.value}</div>
@@ -82,7 +87,7 @@ export default function Home() {
             {/* Card 1 */}
             <Card className="shadow-card text-center p-6 animate-scale-in">
               <CardContent className="pt-6">
-                <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-destructive/10">
+                <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-white border border-destructive/20 shadow-sm">
                   <X className="h-7 w-7 text-destructive" />
                 </div>
                 <CardTitle className="text-lg mb-2">Theory Only</CardTitle>
@@ -93,7 +98,7 @@ export default function Home() {
             {/* Card 2 */}
             <Card className="shadow-card text-center p-6 animate-scale-in" style={{ animationDelay: '100ms' }}>
               <CardContent className="pt-6">
-                <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-destructive/10">
+                <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-white border border-destructive/20 shadow-sm">
                   <X className="h-7 w-7 text-destructive" />
                 </div>
                 <CardTitle className="text-lg mb-2">Boring Classes</CardTitle>
@@ -104,14 +109,14 @@ export default function Home() {
             {/* Card 3 - Highlight */}
             <Card className="text-center p-6 border-2 border-deep-wine ring-2 ring-deep-wine/15 animate-scale-in hover:scale-[1.03] transition-all duration-300" style={{ animationDelay: '200ms', boxShadow: '0 8px 32px -8px hsl(348 70% 24% / 0.25)' }}>
               <CardContent className="pt-6">
-                <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-deep-wine/15 shadow-sm">
-                  <Check className="h-7 w-7 text-deep-wine" />
+                <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-white border border-green-200 shadow-sm">
+                  <Check className="h-7 w-7 text-green-600" />
                 </div>
                 <CardTitle className="text-xl font-extrabold mb-3 text-deep-wine">AnyD Advantage</CardTitle>
                 <ul className="text-sm text-muted-foreground space-y-1.5 text-left">
-                  <li className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-deep-wine flex-shrink-0" /> 100% <span className="font-bold text-foreground">Hands-On</span></li>
-                  <li className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-deep-wine flex-shrink-0" /> <span className="font-bold text-foreground">IIT Bombay</span> Designed</li>
-                  <li className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-deep-wine flex-shrink-0" /> <span className="font-bold text-foreground">Take-Home Projects</span></li>
+                  <li className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-green-600 flex-shrink-0" /> 100% <span className="font-bold text-foreground">Hands-On</span></li>
+                  <li className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-green-600 flex-shrink-0" /> <span className="font-bold text-foreground">IIT Bombay</span> Designed</li>
+                  <li className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-green-600 flex-shrink-0" /> <span className="font-bold text-foreground">Take-Home Projects</span></li>
                 </ul>
               </CardContent>
             </Card>
@@ -132,20 +137,38 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="py-16 bg-secondary scroll-mt-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center mb-10">
-            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-4">
-              Pioneered by <span className="text-deep-wine">IIT Bombay</span> Researchers
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              AnyD is <span className="font-medium text-foreground">SINE IIT Bombay incubated</span> – founded by IIT Professors <span className="font-medium text-foreground">Dr. Seema & Shweta, Dr. Parag Bhargava</span>. Mentored by IITians who believe <span className="font-medium text-foreground">curiosity + tech = future-ready kids</span>.
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-10">
+            {/* Left: Text */}
+            <div className="animate-fade-in">
+              <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-4">
+                Pioneered by <span className="text-deep-wine">IIT Bombay</span> Researchers
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                AnyD is <span className="font-medium text-foreground">SINE IIT Bombay incubated</span> – founded by <span className="font-medium text-foreground">Dr. Seema & Dr. Shweta, Professor Parag Bhargava</span>. Mentored by IITians who believe <span className="font-medium text-foreground">curiosity + tech = future-ready kids</span>.
+              </p>
+            </div>
+
+            {/* Right: Stats Card */}
+            <div className="animate-scale-in">
+              <div className="rounded-2xl bg-deep-wine p-8 shadow-elevated grid grid-cols-2 gap-6">
+                {aboutStats.map((stat) => (
+                  <div key={stat.label} className="text-center">
+                    <div className="flex items-center justify-center gap-1.5 mb-1">
+                      <span className="text-3xl font-bold text-white">{stat.value}</span>
+                      {stat.icon && <stat.icon className="h-5 w-5 fill-[hsl(var(--hero-accent))] text-[hsl(var(--hero-accent))]" />}
+                    </div>
+                    <div className="text-sm text-white/70">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Innovation Milestone */}
           <div className="mx-auto max-w-3xl mb-10">
             <Card className="border-2 border-deep-wine/30 bg-card hover:scale-[1.01] transition-all duration-300 p-1" style={{ boxShadow: '0 8px 32px -8px hsl(348 70% 24% / 0.2)' }}>
               <CardHeader className="flex flex-row items-start gap-4">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-deep-wine/10 flex-shrink-0 mt-1 shadow-sm">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white flex-shrink-0 mt-1 shadow-sm border border-deep-wine/15">
                   <Award className="h-6 w-6 text-deep-wine" />
                 </div>
                 <div>
@@ -174,7 +197,7 @@ export default function Home() {
             <div className="flex flex-col items-center animate-fade-in">
               <img
                 src={foundersImage}
-                alt="AnyD Founders – Dr. Seema, Dr. Shweta, and Dr. Parag Bhargawa"
+                alt="AnyD Founders – Dr. Seema, Dr. Shweta, and Professor Parag Bhargava"
                 className="w-full aspect-[4/3] rounded-2xl shadow-elevated object-cover transition-transform duration-300 hover:scale-[1.03]"
               />
               <p className="mt-3 text-sm text-muted-foreground text-center">
@@ -289,7 +312,7 @@ export default function Home() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex items-start gap-4">
-                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 flex-shrink-0">
+                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white flex-shrink-0 shadow-sm border border-accent/15">
                       <Mail className="h-5 w-5 text-accent" />
                     </div>
                     <div>
@@ -301,7 +324,7 @@ export default function Home() {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 flex-shrink-0">
+                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white flex-shrink-0 shadow-sm border border-accent/15">
                       <Phone className="h-5 w-5 text-accent" />
                     </div>
                     <div>
@@ -313,7 +336,7 @@ export default function Home() {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 flex-shrink-0">
+                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white flex-shrink-0 shadow-sm border border-accent/15">
                       <MapPin className="h-5 w-5 text-accent" />
                     </div>
                     <div>
@@ -327,7 +350,7 @@ export default function Home() {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 flex-shrink-0">
+                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white flex-shrink-0 shadow-sm border border-accent/15">
                       <Clock className="h-5 w-5 text-accent" />
                     </div>
                     <div>
