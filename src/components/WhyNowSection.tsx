@@ -41,7 +41,7 @@ const WhyNowSection = () => {
             WHY NOW
           </p>
           <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-            Why Early STEM Exposure <span className="text-accent">Wins</span>
+            Why Early STEM Exposure <span className="text-[hsl(var(--hero-accent))]">Wins</span>
           </h2>
         </div>
 
