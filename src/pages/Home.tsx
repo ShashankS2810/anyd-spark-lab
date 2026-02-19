@@ -148,7 +148,7 @@ export default function Home() {
                     <Award className="h-5 w-5 text-deep-wine" />
                   </div>
                   <div>
-                    <p className="font-bold text-foreground">India's 1st Conductive Ink Pen</p>
+                    <p className="font-bold text-accent">India's 1st Conductive Ink Pen</p>
                     <p className="text-sm text-muted-foreground">Electricity on Paper – invented right here at AnyD.</p>
                   </div>
                 </div>
@@ -157,7 +157,7 @@ export default function Home() {
                     <Award className="h-5 w-5 text-deep-wine" />
                   </div>
                   <div>
-                    <p className="font-bold text-foreground">SINE IIT Bombay Certified</p>
+                    <p className="font-bold text-accent">SINE IIT Bombay Certified</p>
                     <p className="text-sm text-muted-foreground">Where India's top startups are born and thrive.</p>
                   </div>
                 </div>
