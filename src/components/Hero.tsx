@@ -33,9 +33,9 @@ export function Hero() {
             <div className="flex flex-col sm:flex-row gap-5">
               <Button size="lg" className="bg-[hsl(var(--hero-accent))] text-white shadow-lg hover:bg-[hsl(28,100%,48%)] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 text-lg px-10 py-7 font-bold tracking-wide rounded-xl" onClick={() => scrollToSection('programs')}>
                 Explore Programs
-                <ArrowRight className="ml-2 h-6 w-6" />
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" className="bg-[hsl(var(--hero-accent))]/90 text-white hover:bg-[hsl(28,100%,48%)] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 text-lg px-8 py-6 font-bold rounded-xl shadow-md" onClick={() => scrollToSection('contact')}>
+              <Button size="lg" className="bg-[hsl(var(--hero-accent))] text-white shadow-lg hover:bg-[hsl(28,100%,48%)] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 text-lg px-10 py-7 font-bold tracking-wide rounded-xl" onClick={() => scrollToSection('contact')}>
                 Get Started
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
