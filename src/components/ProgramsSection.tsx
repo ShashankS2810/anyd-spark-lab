@@ -170,7 +170,7 @@ export default function ProgramsSection() {
                 style={{ animationDelay: `${index * 60}ms`, boxShadow: '0 4px 20px -4px hsl(2 51% 50% / 0.08)' }}
               >
                 {program.comingSoon && (
-                  <Badge className="absolute top-4 right-4 bg-accent text-white text-xs px-2.5 py-0.5">
+                  <Badge className="absolute top-4 right-4 bg-accent text-deep-wine text-xs px-2.5 py-0.5">
                     Coming Soon
                   </Badge>
                 )}
@@ -180,13 +180,13 @@ export default function ProgramsSection() {
                   <Icon className="h-7 w-7" />
                 </div>
 
-                <h3 className="text-xl font-bold text-foreground mb-2">{program.title}</h3>
+                <h3 className="text-xl font-extrabold text-deep-wine mb-2">{program.title}</h3>
 
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                <p className="text-sm text-deep-wine/80 leading-relaxed mb-4">
                   {program.description}
                 </p>
 
-                <div className="flex items-center gap-1.5 text-xs font-medium text-accent">
+                <div className="flex items-center gap-1.5 text-xs font-medium text-deep-wine group-hover:text-deep-wine/70 transition-colors">
                   <span>View details</span>
                 </div>
               </button>
