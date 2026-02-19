@@ -8,6 +8,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from '@/components/ui/dialog';
+import BookingFormModal from '@/components/BookingFormModal';
 import {
   Beaker,
   Bot,
@@ -139,6 +140,7 @@ const proofItems = [
 
 export default function ProgramsSection() {
   const [selectedProgram, setSelectedProgram] = useState<Program | null>(null);
+  const [bookingProgram, setBookingProgram] = useState<string | null>(null);
 
   return (
     <section id="programs" className="py-16 bg-background scroll-mt-20">
@@ -322,7 +324,7 @@ export default function ProgramsSection() {
                     <div className="flex justify-center pt-2">
                       <Button
                         className="gradient-accent shadow-elevated text-lg px-10 py-6 rounded-xl hover:scale-105 transition-transform duration-200"
-                        onClick={() => { setSelectedProgram(null); scrollToSection('contact'); }}
+                        onClick={() => { setSelectedProgram(null); setBookingProgram(selectedProgram.title); }}
                       >
                         Book a Seat
                       </Button>
@@ -353,6 +355,13 @@ export default function ProgramsSection() {
             })}
           </div>
         </div>
+
+        {/* Booking Form Modal */}
+        <BookingFormModal
+          open={!!bookingProgram}
+          onOpenChange={(open) => !open && setBookingProgram(null)}
+          programName={bookingProgram || ''}
+        />
       </div>
     </section>
   );
