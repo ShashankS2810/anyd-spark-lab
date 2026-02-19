@@ -1,6 +1,6 @@
 import { Hero } from '@/components/Hero';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Award, Clock, Mail, Phone, MapPin, X, Check, GraduationCap, Rocket, Brain, Users, Star } from 'lucide-react';
+import { Award, Clock, Mail, Phone, MapPin, X, Check, GraduationCap, Rocket, Brain, Users } from 'lucide-react';
 import ProgramsSection from '@/components/ProgramsSection';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -11,8 +11,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { toast } from 'sonner';
 
 import ReviewsCarousel from '@/components/ReviewsCarousel';
-import foundersImage from '@/assets/founders.jpeg';
-import teamImage from '@/assets/team.jpeg';
 
 
 const stats = [
@@ -28,12 +26,6 @@ const iconBadges = [
   { icon: Users, text: '1500+ Families' },
 ];
 
-const aboutStats = [
-  { value: '1500+', label: 'Parents Trust AnyD' },
-  { value: '100%', label: 'Hands-On' },
-  { value: '5.0', label: 'Google Rating', icon: Star },
-  { value: '6–14', label: 'Age Group' },
-];
 
 
 const scrollToSection = (id: string) => {
@@ -137,82 +129,63 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="py-16 bg-secondary scroll-mt-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-10">
+          {/* Two-column: Text + Stats Card */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start mb-12">
             {/* Left: Text */}
             <div className="animate-fade-in">
-              <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-4">
-                Pioneered by <span className="text-deep-wine">IIT Bombay</span> Researchers
+              <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-3">About Us</p>
+              <h2 className="text-4xl font-bold tracking-tight sm:text-5xl mb-5 text-deep-wine">
+                Pioneered by <span className="text-accent">IIT Bombay</span> Researchers
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                AnyD is <span className="font-medium text-foreground">SINE IIT Bombay incubated</span> – founded by <span className="font-medium text-foreground">Dr. Seema & Dr. Shweta, Professor Parag Bhargava</span>. Mentored by IITians who believe <span className="font-medium text-foreground">curiosity + tech = future-ready kids</span>.
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-xl mb-8">
+                AnyD is <span className="font-semibold text-foreground">SINE IIT Bombay incubated</span> – founded by IIT Profs <span className="font-semibold text-foreground">Dr. Seema & Dr. Shweta, Dr. Parag Bhargava</span>. Mentored by IITians who believe <em>curiosity + tech = future-ready kids</em>.
               </p>
+
+              {/* Milestone mini-cards */}
+              <div className="space-y-4">
+                <div className="flex items-start gap-4 bg-white rounded-xl p-5 shadow-sm border border-border/50">
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white flex-shrink-0 shadow-sm border border-deep-wine/15">
+                    <Award className="h-5 w-5 text-deep-wine" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-foreground">India's 1st Conductive Ink Pen</p>
+                    <p className="text-sm text-muted-foreground">Electricity on Paper – invented right here at AnyD.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 bg-white rounded-xl p-5 shadow-sm border border-border/50">
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white flex-shrink-0 shadow-sm border border-deep-wine/15">
+                    <Award className="h-5 w-5 text-deep-wine" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-foreground">SINE IIT Bombay Certified</p>
+                    <p className="text-sm text-muted-foreground">Where India's top startups are born and thrive.</p>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Right: Stats Card */}
-            <div className="animate-scale-in">
-              <div className="rounded-2xl bg-deep-wine p-8 shadow-elevated grid grid-cols-2 gap-6">
-                {aboutStats.map((stat) => (
-                  <div key={stat.label} className="text-center">
-                    <div className="flex items-center justify-center gap-1.5 mb-1">
-                      <span className="text-3xl font-bold text-white">{stat.value}</span>
-                      {stat.icon && <stat.icon className="h-5 w-5 fill-[hsl(var(--hero-accent))] text-[hsl(var(--hero-accent))]" />}
-                    </div>
-                    <div className="text-sm text-white/70">{stat.label}</div>
+            <div className="animate-scale-in flex items-center justify-center lg:justify-end">
+              <div className="rounded-2xl bg-deep-wine p-10 shadow-elevated w-full max-w-md">
+                <div className="text-center mb-8">
+                  <div className="text-6xl sm:text-7xl font-extrabold text-white mb-2">1500+</div>
+                  <div className="text-base text-white/80">Parents Trust AnyD</div>
+                </div>
+                <div className="grid grid-cols-3 gap-4 text-center">
+                  <div>
+                    <div className="text-2xl sm:text-3xl font-bold text-accent">100%</div>
+                    <div className="text-sm text-white/70 mt-1">Hands-On</div>
                   </div>
-                ))}
+                  <div>
+                    <div className="text-2xl sm:text-3xl font-bold text-accent">5.0</div>
+                    <div className="text-sm text-white/70 mt-1">Google Rating</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl sm:text-3xl font-bold text-accent">6–14</div>
+                    <div className="text-sm text-white/70 mt-1">Age Group</div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-
-          {/* Innovation Milestone */}
-          <div className="mx-auto max-w-3xl mb-10">
-            <Card className="border-2 border-deep-wine/30 bg-card hover:scale-[1.01] transition-all duration-300 p-1" style={{ boxShadow: '0 8px 32px -8px hsl(348 70% 24% / 0.2)' }}>
-              <CardHeader className="flex flex-row items-start gap-4">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white flex-shrink-0 mt-1 shadow-sm border border-deep-wine/15">
-                  <Award className="h-6 w-6 text-deep-wine" />
-                </div>
-                <div>
-                  <Badge variant="secondary" className="w-fit mb-2">Innovation Milestone</Badge>
-                  <CardTitle className="text-2xl"><span className="text-deep-wine font-extrabold">India's First</span> <span className="text-deep-wine">Conductive Ink Pen</span></CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  AnyD introduced the concept of <span className="text-foreground font-medium">electricity on paper</span> — making it possible for children to draw circuits that actually work.
-                </p>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-muted-foreground">
-                  {['Simplified complex science into hands-on exploration', 'Introduced electricity on paper for the first time in India', 'Encouraged real-world experimentation from day one', 'A breakthrough born from IIT Bombay research'].map((item) => (
-                    <li key={item} className="flex items-start gap-2">
-                      <Award className="h-4 w-4 text-deep-wine mt-0.5 flex-shrink-0" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Founders & Team Images */}
-          <div className="mx-auto max-w-4xl mb-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="flex flex-col items-center animate-fade-in">
-              <img
-                src={foundersImage}
-                alt="AnyD Founders – Dr. Seema, Dr. Shweta, and Professor Parag Bhargava"
-                className="w-full aspect-[4/3] rounded-2xl shadow-elevated object-cover transition-transform duration-300 hover:scale-[1.03]"
-              />
-              <p className="mt-3 text-sm text-muted-foreground text-center">
-                Founders – <span className="font-semibold text-deep-wine">IIT Bombay Researchers</span>
-              </p>
-            </div>
-            <div className="flex flex-col items-center animate-fade-in" style={{ animationDelay: '100ms' }}>
-              <img
-                src={teamImage}
-                alt="AnyD Team"
-                className="w-full aspect-[4/3] rounded-2xl shadow-elevated object-cover transition-transform duration-300 hover:scale-[1.03]"
-              />
-              <p className="mt-3 text-sm text-muted-foreground text-center">
-                <span className="font-semibold text-deep-wine">Our Team</span>
-              </p>
             </div>
           </div>
         </div>
