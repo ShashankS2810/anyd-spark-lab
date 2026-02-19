@@ -284,7 +284,7 @@ export default function Home() {
                       />
                     </div>
 
-                    <Button type="submit" className="w-full gradient-accent shadow-elevated">
+                    <Button type="submit" className="w-full bg-deep-wine hover:bg-deep-wine/85 text-white font-bold rounded-xl shadow-lg hover:-translate-y-0.5 transition-all duration-200">
                       Send Message
                     </Button>
                   </form>
