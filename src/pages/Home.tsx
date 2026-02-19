@@ -143,7 +143,7 @@ export default function Home() {
 
               {/* Milestone mini-cards */}
               <div className="space-y-4">
-                <div className="flex items-start gap-4 bg-white rounded-xl p-5 shadow-sm border border-border/50">
+                <div className="flex items-start gap-4 bg-white rounded-xl p-5 border-2 border-deep-wine/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_hsl(348_70%_24%/0.25)]" style={{ boxShadow: '0 4px 20px -6px hsl(348 70% 24% / 0.15)' }}>
                   <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white flex-shrink-0 shadow-sm border border-deep-wine/15">
                     <Award className="h-5 w-5 text-deep-wine" />
                   </div>
@@ -152,7 +152,7 @@ export default function Home() {
                     <p className="text-sm text-muted-foreground">Electricity on Paper – invented right here at AnyD.</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4 bg-white rounded-xl p-5 shadow-sm border border-border/50">
+                <div className="flex items-start gap-4 bg-white rounded-xl p-5 border-2 border-deep-wine/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_hsl(348_70%_24%/0.25)]" style={{ boxShadow: '0 4px 20px -6px hsl(348 70% 24% / 0.15)' }}>
                   <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white flex-shrink-0 shadow-sm border border-deep-wine/15">
                     <Award className="h-5 w-5 text-deep-wine" />
                   </div>
