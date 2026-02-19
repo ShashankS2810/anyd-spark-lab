@@ -80,8 +80,8 @@ export default function Home() {
             {/* Card 1 – Theory Only */}
             <Card className="bg-white shadow-sm text-center rounded-2xl border-none animate-scale-in transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
               <CardContent className="p-5 pt-7">
-                <div className="mb-3 inline-flex h-11 w-11 items-center justify-center rounded-full bg-red-50 border border-red-200/50">
-                  <X className="h-5 w-5 text-red-400" strokeWidth={1.6} />
+                <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-red-50 border border-red-200/40">
+                  <X className="h-4 w-4 text-red-400" strokeWidth={1.5} />
                 </div>
                 <CardTitle className="text-base mb-1.5 text-deep-wine">Theory Only</CardTitle>
                 <p className="text-sm text-deep-wine/70">No real projects</p>
@@ -91,8 +91,8 @@ export default function Home() {
             {/* Card 2 – Boring Classes */}
             <Card className="bg-white shadow-sm text-center rounded-2xl border-none animate-scale-in transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style={{ animationDelay: '100ms' }}>
               <CardContent className="p-5 pt-7">
-                <div className="mb-3 inline-flex h-11 w-11 items-center justify-center rounded-full bg-red-50 border border-red-200/50">
-                  <X className="h-5 w-5 text-red-400" strokeWidth={1.6} />
+                <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-red-50 border border-red-200/40">
+                  <X className="h-4 w-4 text-red-400" strokeWidth={1.5} />
                 </div>
                 <CardTitle className="text-base mb-1.5 text-deep-wine">Boring Classes</CardTitle>
                 <p className="text-sm text-deep-wine/70">Curiosity fades</p>
@@ -105,8 +105,8 @@ export default function Home() {
               style={{ animationDelay: '200ms', boxShadow: '0 4px 24px -6px hsl(348 70% 24% / 0.18)' }}
             >
               <CardContent className="p-5 pt-7">
-                <div className="mb-3 inline-flex h-11 w-11 items-center justify-center rounded-full bg-green-50 border border-green-300/50">
-                  <Check className="h-5 w-5 text-green-500" strokeWidth={1.6} />
+                <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-green-50 border border-green-300/40">
+                  <Check className="h-4 w-4 text-green-500" strokeWidth={1.5} />
                 </div>
                 <CardTitle className="text-lg font-extrabold mb-3 text-deep-wine">AnyD Advantage</CardTitle>
                 <ul className="text-sm text-deep-wine/80 space-y-2 text-left">
