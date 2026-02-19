@@ -76,40 +76,52 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 max-w-4xl mx-auto mb-14">
-            {/* Card 1 */}
-            <Card className="bg-white shadow-sm text-center p-6 animate-scale-in border border-border/50">
-              <CardContent className="pt-6">
-                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-destructive/30">
-                  <X className="h-5 w-5 text-destructive" strokeWidth={2.5} />
+          <div className="grid grid-cols-1 gap-7 sm:grid-cols-3 max-w-4xl mx-auto mb-14">
+            {/* Card 1 – Theory Only */}
+            <Card className="bg-white shadow-sm text-center rounded-2xl border-none animate-scale-in transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+              <CardContent className="p-8 pt-10">
+                <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-full bg-red-50 border border-red-200/60">
+                  <X className="h-6 w-6 text-red-400" strokeWidth={1.8} />
                 </div>
-                <CardTitle className="text-lg mb-2">Theory Only</CardTitle>
-                <p className="text-sm text-muted-foreground">No real projects</p>
+                <CardTitle className="text-lg mb-2 text-deep-wine">Theory Only</CardTitle>
+                <p className="text-sm text-deep-wine/70">No real projects</p>
               </CardContent>
             </Card>
 
-            {/* Card 2 */}
-            <Card className="bg-white shadow-sm text-center p-6 animate-scale-in border border-border/50" style={{ animationDelay: '100ms' }}>
-              <CardContent className="pt-6">
-                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-destructive/30">
-                  <X className="h-5 w-5 text-destructive" strokeWidth={2.5} />
+            {/* Card 2 – Boring Classes */}
+            <Card className="bg-white shadow-sm text-center rounded-2xl border-none animate-scale-in transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style={{ animationDelay: '100ms' }}>
+              <CardContent className="p-8 pt-10">
+                <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-full bg-red-50 border border-red-200/60">
+                  <X className="h-6 w-6 text-red-400" strokeWidth={1.8} />
                 </div>
-                <CardTitle className="text-lg mb-2">Boring Classes</CardTitle>
-                <p className="text-sm text-muted-foreground">Curiosity fades</p>
+                <CardTitle className="text-lg mb-2 text-deep-wine">Boring Classes</CardTitle>
+                <p className="text-sm text-deep-wine/70">Curiosity fades</p>
               </CardContent>
             </Card>
 
-            {/* Card 3 - Highlight */}
-            <Card className="bg-white text-center p-6 border-2 border-deep-wine shadow-md animate-scale-in hover:scale-[1.03] transition-all duration-300" style={{ animationDelay: '200ms' }}>
-              <CardContent className="pt-6">
-                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-green-400/40">
-                  <Check className="h-5 w-5 text-green-600" strokeWidth={2.5} />
+            {/* Card 3 – AnyD Advantage (Highlighted) */}
+            <Card
+              className="bg-white text-center rounded-2xl border-2 border-deep-wine animate-scale-in transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_hsl(348_70%_24%/0.3)]"
+              style={{ animationDelay: '200ms', boxShadow: '0 4px 24px -6px hsl(348 70% 24% / 0.18)' }}
+            >
+              <CardContent className="p-8 pt-10">
+                <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-full bg-green-50 border border-green-300/60">
+                  <Check className="h-6 w-6 text-green-500" strokeWidth={1.8} />
                 </div>
-                <CardTitle className="text-xl font-extrabold mb-3 text-deep-wine">AnyD Advantage</CardTitle>
-                <ul className="text-sm text-muted-foreground space-y-1.5 text-left">
-                  <li className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-green-600 flex-shrink-0" /> 100% <span className="font-bold text-foreground">Hands-On</span></li>
-                  <li className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-green-600 flex-shrink-0" /> <span className="font-bold text-foreground">IIT Bombay</span> Designed</li>
-                  <li className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-green-600 flex-shrink-0" /> <span className="font-bold text-foreground">Take-Home Projects</span></li>
+                <CardTitle className="text-xl font-extrabold mb-4 text-deep-wine">AnyD Advantage</CardTitle>
+                <ul className="text-sm text-deep-wine/80 space-y-2.5 text-left">
+                  <li className="flex items-center gap-2.5">
+                    <Check className="h-4 w-4 text-green-500 flex-shrink-0" strokeWidth={2} />
+                    100% <span className="font-bold text-accent">Hands-On</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <Check className="h-4 w-4 text-green-500 flex-shrink-0" strokeWidth={2} />
+                    <span className="font-bold text-accent">IIT Bombay</span> Designed
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <Check className="h-4 w-4 text-green-500 flex-shrink-0" strokeWidth={2} />
+                    <span className="font-bold text-accent">Take-Home Projects</span>
+                  </li>
                 </ul>
               </CardContent>
             </Card>
