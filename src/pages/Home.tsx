@@ -72,7 +72,7 @@ export default function Home() {
               Tired of Basic School STEM?
             </h2>
             <p className="text-3xl sm:text-4xl font-bold text-[hsl(var(--hero-accent))]">
-              Your Child Deserves More.
+              Your Child Deserves More
             </p>
           </div>
 
