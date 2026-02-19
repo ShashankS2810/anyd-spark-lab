@@ -130,9 +130,9 @@ export default function Home() {
       <section id="about" className="py-16 bg-secondary scroll-mt-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           {/* Two-column: Text + Stats Card */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-12">
             {/* Left: Text */}
-            <div className="animate-fade-in">
+            <div className="animate-fade-in order-1">
               <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-3">About Us</p>
               <h2 className="text-4xl font-bold tracking-tight sm:text-5xl mb-5 text-deep-wine">
                 Pioneered by <span className="text-accent">IIT Bombay</span> Researchers
@@ -140,32 +140,10 @@ export default function Home() {
               <p className="text-lg text-muted-foreground leading-relaxed max-w-xl mb-8">
                 AnyD is <span className="font-semibold text-foreground">SINE IIT Bombay incubated</span> – founded by IIT Profs <span className="font-semibold text-foreground">Dr. Seema & Dr. Shweta, Dr. Parag Bhargava</span>. Mentored by IITians who believe <em>curiosity + tech = future-ready kids</em>.
               </p>
-
-              {/* Milestone mini-cards */}
-              <div className="space-y-4">
-                <div className="flex items-start gap-4 bg-white rounded-xl p-5 border-2 border-deep-wine/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_hsl(348_70%_24%/0.25)]" style={{ boxShadow: '0 4px 20px -6px hsl(348 70% 24% / 0.15)' }}>
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white flex-shrink-0 shadow-sm border border-deep-wine/15">
-                    <Award className="h-5 w-5 text-deep-wine" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-accent">India's 1st Conductive Ink Pen</p>
-                    <p className="text-sm text-muted-foreground">Electricity on Paper – invented right here at AnyD.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4 bg-white rounded-xl p-5 border-2 border-deep-wine/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_hsl(348_70%_24%/0.25)]" style={{ boxShadow: '0 4px 20px -6px hsl(348 70% 24% / 0.15)' }}>
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white flex-shrink-0 shadow-sm border border-deep-wine/15">
-                    <Award className="h-5 w-5 text-deep-wine" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-accent">SINE IIT Bombay Certified</p>
-                    <p className="text-sm text-muted-foreground">Where India's top startups are born and thrive.</p>
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Right: Stats Card */}
-            <div className="animate-scale-in flex items-center justify-center lg:justify-end">
+            <div className="animate-scale-in flex items-center justify-center lg:justify-end order-2">
               <div className="rounded-2xl bg-deep-wine p-10 shadow-elevated w-full max-w-md">
                 <div className="text-center mb-8">
                   <div className="text-6xl sm:text-7xl font-extrabold text-white mb-2">1500+</div>
@@ -185,6 +163,28 @@ export default function Home() {
                     <div className="text-sm text-white/70 mt-1">Age Group</div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Milestone mini-cards - below the two-column grid */}
+          <div className="space-y-4 max-w-2xl">
+            <div className="flex items-start gap-4 bg-white rounded-xl p-5 border-2 border-deep-wine/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_hsl(348_70%_24%/0.25)]" style={{ boxShadow: '0 4px 20px -6px hsl(348 70% 24% / 0.15)' }}>
+              <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white flex-shrink-0 shadow-sm border border-deep-wine/15">
+                <Award className="h-5 w-5 text-deep-wine" />
+              </div>
+              <div>
+                <p className="font-bold text-accent">India's 1st Conductive Ink Pen</p>
+                <p className="text-sm text-muted-foreground">Electricity on Paper – invented right here at AnyD.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4 bg-white rounded-xl p-5 border-2 border-deep-wine/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_hsl(348_70%_24%/0.25)]" style={{ boxShadow: '0 4px 20px -6px hsl(348 70% 24% / 0.15)' }}>
+              <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white flex-shrink-0 shadow-sm border border-deep-wine/15">
+                <Award className="h-5 w-5 text-deep-wine" />
+              </div>
+              <div>
+                <p className="font-bold text-accent">SINE IIT Bombay Certified</p>
+                <p className="text-sm text-muted-foreground">Where India's top startups are born and thrive.</p>
               </div>
             </div>
           </div>
