@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Star, Users, Trophy, Quote, TrendingUp, BookOpen, Lightbulb, Wrench } from 'lucide-react';
+import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const reviews = [
   {
@@ -40,45 +42,19 @@ const reviews = [
   },
 ];
 
-const stats = [
-  { icon: Users, value: '1500+', label: 'Happy Families' },
-  { icon: Star, value: '5.0', label: 'Star Rating' },
-  { icon: Trophy, value: '100%', label: 'Hands-on Success' },
-];
-
-const whyNowCards = [
-  {
-    icon: TrendingUp,
-    text: (
-      <>
-        <span className="font-bold text-accent">85 million jobs</span> may change or disappear by 2030 (World Economic Forum). Children who build problem-solving and STEM skills early adapt faster.
-      </>
-    ),
-  },
-  {
-    icon: BookOpen,
-    text: (
-      <>
-        <span className="font-bold text-accent">NEP 2020</span> emphasizes experiential and hands-on learning. AnyD follows this approach so children learn by doing, not memorizing.
-      </>
-    ),
-  },
-  {
-    icon: Lightbulb,
-    text: 'Hands-on STEM builds curiosity, confidence, and real-world thinking — skills exams alone cannot develop.',
-  },
-  {
-    icon: Wrench,
-    text: 'When children build, test, and experiment themselves, learning becomes fun, memorable, and meaningful.',
-  },
-];
-
 const ReviewsCarousel = () => {
+  const [current, setCurrent] = useState(0);
+  const perPage = 3;
+  const totalPages = Math.ceil(reviews.length / perPage);
+
+  const prev = () => setCurrent((c) => (c === 0 ? totalPages - 1 : c - 1));
+  const next = () => setCurrent((c) => (c === totalPages - 1 ? 0 : c + 1));
+
+  const visibleReviews = reviews.slice(current * perPage, current * perPage + perPage);
+
   return (
     <section id="reviews" className="py-16 bg-secondary scroll-mt-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-
-        {/* Testimonials Header */}
         <div className="mx-auto max-w-3xl text-center mb-8">
           <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-4">
             What Parents Say
@@ -88,85 +64,53 @@ const ReviewsCarousel = () => {
           </p>
         </div>
 
-        {/* Stats Strip */}
-        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mb-10">
-          {stats.map((stat) => {
-            const Icon = stat.icon;
-            return (
-              <div
-                key={stat.label}
-                className="flex items-center gap-3 rounded-2xl border border-border bg-card shadow-card px-5 py-3"
-              >
-                <div className="h-10 w-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
-                  <Icon className="h-5 w-5 text-accent" />
-                </div>
-                <div>
-                  <div className="text-xl font-bold text-foreground leading-tight">{stat.value}</div>
-                  <div className="text-xs text-muted-foreground">{stat.label}</div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14">
-          {reviews.map((review, index) => (
-            <Card
-              key={review.name}
-              className="shadow-card hover:shadow-elevated hover:-translate-y-1 transition-all duration-300 animate-fade-in"
-              style={{ animationDelay: `${index * 80}ms` }}
-            >
-              <CardContent className="p-6">
-                <Quote className="h-6 w-6 text-accent/20 mb-3" />
-                <div className="flex gap-1 mb-4">
-                  {Array.from({ length: review.rating }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-accent text-accent" />
-                  ))}
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-                  "{review.text}"
-                </p>
-                <div className="border-t border-border pt-4">
-                  <div className="font-semibold text-foreground text-sm">{review.name}</div>
-                  <div className="text-xs text-muted-foreground">Parent of {review.childAge}</div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        {/* Why Now Sub-section */}
-        <div className="mx-auto max-w-3xl text-center mb-10">
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-accent mb-2">Why Now</span>
-          <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-3">
-            Why Early STEM Exposure Matters
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            The world is changing fast. The skills children build today shape the opportunities they'll have tomorrow.
-          </p>
-        </div>
-
-        <div className="mx-auto max-w-2xl space-y-4">
-          {whyNowCards.map((card, index) => {
-            const Icon = card.icon;
-            return (
+        {/* Carousel */}
+        <div className="relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {visibleReviews.map((review, index) => (
               <Card
-                key={index}
-                className="shadow-card animate-fade-in"
-                style={{ animationDelay: `${index * 100}ms` }}
+                key={review.name}
+                className="shadow-card hover:shadow-elevated hover:-translate-y-1 transition-all duration-300 animate-fade-in"
+                style={{ animationDelay: `${index * 80}ms` }}
               >
-                <CardContent className="flex items-start gap-4 p-5">
-                  <div className="h-10 w-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Icon className="h-5 w-5 text-accent" />
+                <CardContent className="p-6">
+                  <Quote className="h-6 w-6 text-accent/20 mb-3" />
+                  <div className="flex gap-1 mb-4">
+                    {Array.from({ length: review.rating }).map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-accent text-accent" />
+                    ))}
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{card.text}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+                    "{review.text}"
+                  </p>
+                  <div className="border-t border-border pt-4">
+                    <div className="font-semibold text-foreground text-sm">{review.name}</div>
+                    <div className="text-xs text-muted-foreground">Parent of {review.childAge}</div>
+                  </div>
                 </CardContent>
               </Card>
-            );
-          })}
-        </div>
+            ))}
+          </div>
 
+          {/* Navigation */}
+          <div className="flex items-center justify-center gap-4 mt-8">
+            <Button variant="outline" size="icon" onClick={prev} className="rounded-full">
+              <ChevronLeft className="h-5 w-5" />
+            </Button>
+            <div className="flex gap-2">
+              {Array.from({ length: totalPages }).map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrent(i)}
+                  className={`h-2.5 rounded-full transition-all duration-300 ${i === current ? 'w-8 bg-deep-wine' : 'w-2.5 bg-border hover:bg-muted-foreground/30'}`}
+                />
+              ))}
+            </div>
+            <Button variant="outline" size="icon" onClick={next} className="rounded-full">
+              <ChevronRight className="h-5 w-5" />
+            </Button>
+          </div>
+        </div>
       </div>
     </section>
   );
