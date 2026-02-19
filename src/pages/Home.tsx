@@ -71,7 +71,7 @@ export default function Home() {
             <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-2">
               Tired of Basic School STEM?
             </h2>
-            <p className="text-3xl sm:text-4xl font-bold text-accent">
+            <p className="text-3xl sm:text-4xl font-bold text-[hsl(var(--hero-accent))]">
               Your Child Deserves More.
             </p>
           </div>
