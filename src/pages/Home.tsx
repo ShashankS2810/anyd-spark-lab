@@ -11,6 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { toast } from 'sonner';
 
 import ReviewsCarousel from '@/components/ReviewsCarousel';
+import WhyNowSection from '@/components/WhyNowSection';
 
 
 const stats = [
@@ -194,6 +195,8 @@ export default function Home() {
       <ProgramsSection />
 
       <ReviewsCarousel />
+
+      <WhyNowSection />
 
       {/* Contact Section */}
       <section id="contact" className="py-16 bg-secondary scroll-mt-20">
