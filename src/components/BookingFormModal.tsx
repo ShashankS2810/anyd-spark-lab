@@ -18,6 +18,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { toast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
 interface BookingFormModalProps {
   open: boolean;
@@ -39,19 +40,36 @@ export default function BookingFormModal({ open, onOpenChange, programName }: Bo
     }
   }, [open]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!parentNumber.trim()) {
       toast({ title: 'Please enter your WhatsApp number', variant: 'destructive' });
       return;
     }
-    toast({ title: '🎉 Seat Booked!', description: `We'll reach out on WhatsApp for ${programName}.` });
-    setStudentName('');
-    setAgeGroup('');
-    setParentName('');
-    setParentNumber('');
-    setEmail('');
-    onOpenChange(false);
+
+    setIsSubmitting(true);
+    try {
+      const { error } = await supabase.functions.invoke('submit-booking', {
+        body: { studentName, ageGroup, parentName, parentNumber, email, programName },
+      });
+
+      if (error) throw error;
+
+      toast({ title: '🎉 Seat Booked!', description: `We'll reach out on WhatsApp for ${programName}.` });
+      setStudentName('');
+      setAgeGroup('');
+      setParentName('');
+      setParentNumber('');
+      setEmail('');
+      onOpenChange(false);
+    } catch (err) {
+      console.error('Booking form error:', err);
+      toast({ title: 'Something went wrong. Please try again.', variant: 'destructive' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -148,9 +166,10 @@ export default function BookingFormModal({ open, onOpenChange, programName }: Bo
             <div className="pt-1 sm:pt-2 sticky bottom-0 bg-[hsl(348,40%,97%)]">
               <Button
                 type="submit"
+                disabled={isSubmitting}
                 className="w-full bg-deep-wine hover:bg-deep-wine/85 text-white text-base sm:text-lg font-bold rounded-xl h-11 sm:h-12 shadow-lg hover:-translate-y-0.5 transition-all duration-200"
               >
-                Book My Seat
+                {isSubmitting ? 'Booking...' : 'Book My Seat'}
               </Button>
             </div>
           </form>

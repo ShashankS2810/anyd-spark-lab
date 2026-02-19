@@ -9,6 +9,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { toast } from 'sonner';
+import { supabase } from '@/integrations/supabase/client';
 
 import ReviewsCarousel from '@/components/ReviewsCarousel';
 import WhyNowSection from '@/components/WhyNowSection';
@@ -37,12 +38,34 @@ const scrollToSection = (id: string) => {
 };
 
 export default function Home() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success('Thank you! We will get back to you soon.', {
-      description: 'Your message has been sent successfully.',
-    });
-    (e.target as HTMLFormElement).reset();
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    try {
+      const { data, error } = await supabase.functions.invoke('submit-contact', {
+        body: {
+          firstName: formData.get('firstName'),
+          lastName: formData.get('lastName'),
+          email: formData.get('email'),
+          phone: formData.get('phone'),
+          age: formData.get('age'),
+          interest: formData.get('interest'),
+          message: formData.get('message'),
+        },
+      });
+
+      if (error) throw error;
+
+      toast.success('Thank you! We will get back to you soon.', {
+        description: 'Your message has been sent successfully.',
+      });
+      form.reset();
+    } catch (err) {
+      console.error('Contact form error:', err);
+      toast.error('Something went wrong. Please try again.');
+    }
   };
 
   return (
