@@ -177,7 +177,7 @@ export default function Home() {
               Pioneered by <span className="text-[hsl(var(--hero-accent))] font-bold">IIT Bombay</span> Researchers
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-xl mb-8">
-                AnyD Material is a <span className="font-semibold text-foreground">SINE IIT Bombay incubated</span> startup founded by <span className="font-semibold text-foreground">IIT Researchers</span> & Professors, <span className="font-semibold text-foreground">Dr. Seema Negi & Dr. Shweta Singh</span> and <span className="font-semibold text-foreground">Professor Parag Bhargava</span>. Mentored by IITians who believe <em>curiosity + tech = future-ready kids</em>.
+                AnyD Materials is a <span className="font-semibold text-foreground">SINE IIT Bombay incubated</span> startup founded by <span className="font-semibold text-foreground">IIT Researchers</span> & Professors, <span className="font-semibold text-foreground">Dr. Seema Negi & Dr. Shweta Singh</span> and <span className="font-semibold text-foreground">Professor Parag Bhargava</span>. Mentored by IITians who believe <em>curiosity + tech = future-ready kids</em>.
               </p>
 
               {/* Milestone mini-cards */}
