@@ -182,7 +182,7 @@ export default function ProgramsSection() {
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center mb-10">
           <Badge variant="secondary" className="mb-3 text-sm px-4 py-1.5">
-            What We Teach
+            What Your Child Will Learn
           </Badge>
           <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-3">
             Our Programs
