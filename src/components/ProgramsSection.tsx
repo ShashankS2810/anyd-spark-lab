@@ -22,8 +22,11 @@ import {
   Home,
   Award,
 } from 'lucide-react';
-import stemVideo from '@/assets/stem-class-video.mp4';
 import roboticsVideo from '@/assets/robotics-class-video.mp4';
+import stemImage1 from '@/assets/stem-design-1.jpeg';
+import stemImage2 from '@/assets/stem-design-2.jpeg';
+import stemImage3 from '@/assets/stem-design-3.jpeg';
+import stemImage4 from '@/assets/stem-design-4.jpeg';
 import pdImage1 from '@/assets/pd-design-1.jpeg';
 import pdImage2 from '@/assets/pd-design-2.jpeg';
 import pdImage3 from '@/assets/pd-design-3.jpeg';
@@ -201,11 +204,17 @@ export default function ProgramsSection() {
           <DialogContent className={`${selectedProgram?.id === 'stem' || selectedProgram?.id === 'robotics' || selectedProgram?.id === 'product-design' || selectedProgram?.id === 'ai' ? 'max-w-5xl' : 'max-w-2xl'} max-h-[85vh] overflow-y-auto rounded-2xl border-accent/20 backdrop-blur-sm p-0`}>
             {selectedProgram && (() => {
               const Icon = selectedProgram.icon;
-              const videoMap: Record<string, string> = { stem: stemVideo, robotics: roboticsVideo };
+              const videoMap: Record<string, string> = { robotics: roboticsVideo };
               const videoSrc = videoMap[selectedProgram.id];
               const hasVideo = !!videoSrc;
-              const hasImages = selectedProgram.id === 'product-design' || selectedProgram.id === 'ai';
+              const hasImages = selectedProgram.id === 'stem' || selectedProgram.id === 'product-design' || selectedProgram.id === 'ai';
               const imageMap: Record<string, { src: string; alt: string }[]> = {
+                'stem': [
+                  { src: stemImage1, alt: 'Students working on electronics' },
+                  { src: stemImage2, alt: 'STEM classroom session' },
+                  { src: stemImage3, alt: 'Hands-on learning activity' },
+                  { src: stemImage4, alt: 'Kids doing science experiments' },
+                ],
                 'product-design': [
                   { src: pdImage1, alt: '3D modeling on laptop' },
                   { src: pdImage2, alt: 'Student-made prototype' },
