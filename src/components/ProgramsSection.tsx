@@ -38,6 +38,14 @@ import aiImage1 from '@/assets/ai-design-1.jpeg';
 import aiImage2 from '@/assets/ai-design-2.jpeg';
 import aiImage3 from '@/assets/ai-design-3.jpeg';
 import aiImage4 from '@/assets/ai-design-4.jpeg';
+import summerImage1 from '@/assets/summer-design-1.jpeg';
+import summerImage2 from '@/assets/summer-design-2.jpeg';
+import summerImage3 from '@/assets/summer-design-3.jpeg';
+import summerImage4 from '@/assets/summer-design-4.jpeg';
+import schoolImage1 from '@/assets/school-design-1.jpeg';
+import schoolImage2 from '@/assets/school-design-2.jpeg';
+import schoolImage3 from '@/assets/school-design-3.jpeg';
+import schoolImage4 from '@/assets/school-design-4.jpeg';
 
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
@@ -99,6 +107,26 @@ const programs: Program[] = [
     ageDetails: {
       young: 'Pattern games, image vs sound sorting, "teaching" a model through play.',
       teen: 'Intro to datasets, bias, and simple no-code AI demos for real use-cases.',
+    },
+  },
+  {
+    id: 'summer',
+    title: 'Summer Program',
+    description: 'Intensive hands-on STEM learning during summer break with projects, experiments, and innovation challenges.',
+    icon: Beaker,
+    ageDetails: {
+      young: 'Fun experiments, robotics basics, and creative science projects.',
+      teen: 'Advanced robotics, coding, innovation labs, and prototype building.',
+    },
+  },
+  {
+    id: 'in-school',
+    title: 'In-School Program',
+    description: 'Structured STEM curriculum delivered directly inside partner schools.',
+    icon: GraduationCap,
+    ageDetails: {
+      young: 'Interactive science, circuits, creativity labs.',
+      teen: 'Robotics, AI exposure, innovation thinking, and real-world problem solving.',
     },
   },
   {
@@ -204,10 +232,10 @@ export default function ProgramsSection() {
 
         {/* Modal Detail Panel */}
         <Dialog open={!!selectedProgram} onOpenChange={(open) => !open && setSelectedProgram(null)}>
-          <DialogContent className={`${selectedProgram?.id === 'stem' || selectedProgram?.id === 'robotics' || selectedProgram?.id === 'product-design' || selectedProgram?.id === 'ai' ? 'max-w-5xl' : 'max-w-2xl'} max-h-[85vh] overflow-y-auto rounded-2xl border-accent/20 backdrop-blur-sm p-0`}>
+          <DialogContent className={`${selectedProgram?.id === 'stem' || selectedProgram?.id === 'robotics' || selectedProgram?.id === 'product-design' || selectedProgram?.id === 'ai' || selectedProgram?.id === 'summer' || selectedProgram?.id === 'in-school' ? 'max-w-5xl' : 'max-w-2xl'} max-h-[85vh] overflow-y-auto rounded-2xl border-accent/20 backdrop-blur-sm p-0`}>
             {selectedProgram && (() => {
               const Icon = selectedProgram.icon;
-              const hasImages = selectedProgram.id === 'stem' || selectedProgram.id === 'robotics' || selectedProgram.id === 'product-design' || selectedProgram.id === 'ai';
+              const hasImages = selectedProgram.id === 'stem' || selectedProgram.id === 'robotics' || selectedProgram.id === 'product-design' || selectedProgram.id === 'ai' || selectedProgram.id === 'summer' || selectedProgram.id === 'in-school';
               const imageMap: Record<string, { src: string; alt: string }[]> = {
                 'stem': [
                   { src: stemImage1, alt: 'Students working on electronics' },
@@ -232,6 +260,18 @@ export default function ProgramsSection() {
                   { src: aiImage2, alt: 'AI classroom with data screens' },
                   { src: aiImage3, alt: 'Students learning AI concepts' },
                   { src: aiImage4, alt: 'Pattern recognition activity' },
+                ],
+                'summer': [
+                  { src: summerImage1, alt: 'Summer STEM experiments' },
+                  { src: summerImage2, alt: 'Kids building robots in summer camp' },
+                  { src: summerImage3, alt: 'Innovation challenge activity' },
+                  { src: summerImage4, alt: 'Students presenting projects' },
+                ],
+                'in-school': [
+                  { src: schoolImage1, alt: 'In-school STEM session' },
+                  { src: schoolImage2, alt: 'Students doing robotics in school' },
+                  { src: schoolImage3, alt: 'Creative STEM lab activity' },
+                  { src: schoolImage4, alt: 'Collaborative school project' },
                 ],
               };
               const sideImages = imageMap[selectedProgram.id] || [];
