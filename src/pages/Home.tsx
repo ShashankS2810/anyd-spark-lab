@@ -359,8 +359,8 @@ export default function Home() {
                     </div>
                     <div>
                       <div className="font-semibold mb-1">Email</div>
-                      <a href="mailto:info@anydmaterials.com" className="text-muted-foreground hover:text-accent transition-smooth">
-                        info@anydmaterials.com
+                      <a href="mailto:stemrobotics@anydmaterial.com" className="text-muted-foreground hover:text-accent transition-smooth">
+                        stemrobotics@anydmaterial.com
                       </a>
                     </div>
                   </div>
@@ -371,8 +371,8 @@ export default function Home() {
                     </div>
                     <div>
                       <div className="font-semibold mb-1">Phone</div>
-                      <a href="tel:+911234567890" className="text-muted-foreground hover:text-accent transition-smooth">
-                        +91 123 456 7890
+                      <a href="tel:+919082386899" className="text-muted-foreground hover:text-accent transition-smooth">
+                        +91 90823 86899
                       </a>
                     </div>
                   </div>
