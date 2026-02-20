@@ -22,7 +22,10 @@ import {
   Home,
   Award,
 } from 'lucide-react';
-import roboticsVideo from '@/assets/robotics-class-video.mp4';
+import roboticsImage1 from '@/assets/robotics-design-1.jpeg';
+import roboticsImage2 from '@/assets/robotics-design-2.jpeg';
+import roboticsImage3 from '@/assets/robotics-design-3.jpeg';
+import roboticsImage4 from '@/assets/robotics-design-4.jpeg';
 import stemImage1 from '@/assets/stem-design-1.jpeg';
 import stemImage2 from '@/assets/stem-design-2.jpeg';
 import stemImage3 from '@/assets/stem-design-3.jpeg';
@@ -204,16 +207,19 @@ export default function ProgramsSection() {
           <DialogContent className={`${selectedProgram?.id === 'stem' || selectedProgram?.id === 'robotics' || selectedProgram?.id === 'product-design' || selectedProgram?.id === 'ai' ? 'max-w-5xl' : 'max-w-2xl'} max-h-[85vh] overflow-y-auto rounded-2xl border-accent/20 backdrop-blur-sm p-0`}>
             {selectedProgram && (() => {
               const Icon = selectedProgram.icon;
-              const videoMap: Record<string, string> = { robotics: roboticsVideo };
-              const videoSrc = videoMap[selectedProgram.id];
-              const hasVideo = !!videoSrc;
-              const hasImages = selectedProgram.id === 'stem' || selectedProgram.id === 'product-design' || selectedProgram.id === 'ai';
+              const hasImages = selectedProgram.id === 'stem' || selectedProgram.id === 'robotics' || selectedProgram.id === 'product-design' || selectedProgram.id === 'ai';
               const imageMap: Record<string, { src: string; alt: string }[]> = {
                 'stem': [
                   { src: stemImage1, alt: 'Students working on electronics' },
                   { src: stemImage2, alt: 'STEM classroom session' },
                   { src: stemImage3, alt: 'Hands-on learning activity' },
                   { src: stemImage4, alt: 'Kids doing science experiments' },
+                ],
+                'robotics': [
+                  { src: roboticsImage1, alt: 'Robotics club classroom' },
+                  { src: roboticsImage2, alt: 'Kids building circuits' },
+                  { src: roboticsImage3, alt: 'Students programming robots' },
+                  { src: roboticsImage4, alt: 'Robotics team activity' },
                 ],
                 'product-design': [
                   { src: pdImage1, alt: '3D modeling on laptop' },
@@ -229,24 +235,8 @@ export default function ProgramsSection() {
                 ],
               };
               const sideImages = imageMap[selectedProgram.id] || [];
-              const hasSidePanel = hasVideo || hasImages;
               return (
-                <div className={`${hasSidePanel ? 'flex flex-col md:flex-row' : ''}`}>
-                  {hasVideo && (
-                    <div className="md:w-[45%] flex-shrink-0 p-4 md:p-6 flex items-center">
-                      <div className="w-full rounded-xl overflow-hidden shadow-elevated bg-foreground/5">
-                        <video
-                          src={videoSrc}
-                          className="w-full h-full object-cover aspect-[9/16] md:aspect-auto md:max-h-[70vh]"
-                          autoPlay
-                          muted
-                          loop
-                          playsInline
-                          controls
-                        />
-                      </div>
-                    </div>
-                  )}
+                <div className={`${hasImages ? 'flex flex-col md:flex-row' : ''}`}>
                   {hasImages && (
                     <div className="md:w-[45%] flex-shrink-0 p-4 md:p-6 flex items-center">
                       <div className="w-full grid grid-cols-2 gap-3">
@@ -269,7 +259,7 @@ export default function ProgramsSection() {
                   )}
 
                   {/* Content column */}
-                  <div className={`p-6 md:p-8 ${hasSidePanel ? 'md:w-[55%]' : ''}`}>
+                  <div className={`p-6 md:p-8 ${hasImages ? 'md:w-[55%]' : ''}`}>
                     {/* Header */}
                     <DialogHeader className="mb-6">
                       <div className="flex items-center gap-3 mb-3">
@@ -291,7 +281,7 @@ export default function ProgramsSection() {
                     </DialogHeader>
 
                     {/* Two-column age groups */}
-                    <div className={`grid grid-cols-1 ${hasSidePanel ? '' : 'md:grid-cols-2'} gap-4 mb-8`}>
+                    <div className={`grid grid-cols-1 ${hasImages ? '' : 'md:grid-cols-2'} gap-4 mb-8`}>
                       {/* Age 6-8 */}
                       <div className="rounded-xl bg-secondary p-5 border border-border">
                         <h4 className="text-lg font-semibold text-foreground mb-3">Age 6–8</h4>
