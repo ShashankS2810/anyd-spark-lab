@@ -233,9 +233,9 @@ export default function Home() {
             <h3 className="text-2xl font-bold text-deep-wine text-center mb-8">Meet Our Founders</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {[
-                { name: 'Professor Parag Bhargava', img: founderParag },
-                { name: 'Dr. Seema Negi', img: founderSeema },
-                { name: 'Dr. Shweta Singh', img: founderShweta },
+                { name: 'Professor Parag Bhargava', img: founderParag, role: 'Founder' },
+                { name: 'Dr. Seema Negi', img: founderSeema, role: 'Co-Founder' },
+                { name: 'Dr. Shweta Singh', img: founderShweta, role: 'Founder' },
               ].map((founder, i) => (
                 <div
                   key={founder.name}
@@ -250,7 +250,7 @@ export default function Home() {
                     />
                   </div>
                   <h4 className="text-lg font-bold text-deep-wine">{founder.name}</h4>
-                  <p className="text-sm font-semibold text-accent mt-1">Founder</p>
+                  <p className="text-sm font-semibold text-accent mt-1">{founder.role}</p>
                 </div>
               ))}
             </div>
