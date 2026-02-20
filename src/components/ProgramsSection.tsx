@@ -367,7 +367,7 @@ export default function ProgramsSection() {
 
         {/* Micro-Proof Strip */}
         <div className="mt-12 rounded-2xl border border-border bg-card shadow-card py-6 px-6 md:px-10">
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+          <div className="flex flex-col items-start gap-y-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-8">
             {proofItems.map((item, index) => {
               const ProofIcon = item.icon;
               return (
