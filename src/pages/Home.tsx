@@ -53,7 +53,7 @@ export default function Home() {
           lastName: formData.get('lastName'),
           email: formData.get('email'),
           phone: formData.get('phone'),
-          age: formData.get('age'),
+          
           interest: formData.get('interest'),
           message: formData.get('message'),
         },
@@ -312,18 +312,6 @@ export default function Home() {
                       <Input id="phone" name="phone" type="tel" />
                     </div>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="age">Age</Label>
-                      <Select name="age" required>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select Age Group" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="6-8">6–8 years</SelectItem>
-                          <SelectItem value="9-14">9–14 years</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="interest">I'm Interested In</Label>
