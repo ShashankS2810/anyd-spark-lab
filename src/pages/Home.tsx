@@ -228,37 +228,40 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Founder Profile Cards */}
-          <div className="mt-12">
-            <h3 className="text-2xl font-bold text-deep-wine text-center mb-8">Meet Our Founders</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {[
-                { name: 'Professor Parag Bhargava', img: founderParag, role: 'Co-Founder' },
-                { name: 'Dr. Seema Negi', img: founderSeema, role: 'Co-Founder' },
-                { name: 'Dr. Shweta Singh', img: founderShweta, role: 'Co-Founder' },
-              ].map((founder, i) => (
-                <div
-                  key={founder.name}
-                  className="bg-white rounded-[20px] p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_hsl(348_70%_24%/0.25)] animate-fade-in"
-                  style={{ boxShadow: '0 4px 16px -4px hsl(348 70% 24% / 0.12)', animationDelay: `${i * 100}ms` }}
-                >
-                  <div className="flex justify-center mb-4">
-                    <img
-                      src={founder.img}
-                      alt={founder.name}
-                      className="w-28 h-28 rounded-full object-cover ring-2 ring-[hsl(var(--hero-accent))]/40 shadow-md"
-                    />
-                  </div>
-                  <h4 className="text-lg font-bold text-deep-wine">{founder.name}</h4>
-                  <p className="text-sm font-semibold text-accent mt-1">{founder.role}</p>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
       <ProgramsSection />
+
+      {/* Meet Our Founders */}
+      <section className="py-16 bg-secondary">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <h3 className="text-2xl font-bold text-deep-wine text-center mb-8">Meet Our Founders</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            {[
+              { name: 'Professor Parag Bhargava', img: founderParag, role: 'Co-Founder' },
+              { name: 'Dr. Seema Negi', img: founderSeema, role: 'Co-Founder' },
+              { name: 'Dr. Shweta Singh', img: founderShweta, role: 'Co-Founder' },
+            ].map((founder, i) => (
+              <div
+                key={founder.name}
+                className="bg-white rounded-[20px] p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_-8px_hsl(348_70%_24%/0.25)] animate-fade-in"
+                style={{ boxShadow: '0 4px 16px -4px hsl(348 70% 24% / 0.12)', animationDelay: `${i * 100}ms` }}
+              >
+                <div className="flex justify-center mb-4">
+                  <img
+                    src={founder.img}
+                    alt={founder.name}
+                    className="w-28 h-28 rounded-full object-cover ring-2 ring-[hsl(var(--hero-accent))]/40 shadow-md"
+                  />
+                </div>
+                <h4 className="text-lg font-bold text-deep-wine">{founder.name}</h4>
+                <p className="text-sm font-semibold text-accent mt-1">{founder.role}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <ReviewsCarousel />
 
