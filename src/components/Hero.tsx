@@ -27,7 +27,7 @@ export function Hero() {
             </h1>
             
             <p className="text-xl leading-9 text-white/75 mb-6">
-              1500+ Thriving Parents • Build, Print & Take Home Real Projects
+              1500+ Thriving Parents • Learn & Build Real Projects
             </p>
             
             <div className="flex flex-col sm:flex-row gap-5">
