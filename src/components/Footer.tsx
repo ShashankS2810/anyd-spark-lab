@@ -35,7 +35,7 @@ export function Footer() {
               <img src={anydLogo} alt="AnyD Materials Logo" width="924" height="362" className="h-14 sm:h-16 md:h-20 w-auto" />
             </a>
             <p className="text-sm text-muted-foreground max-w-xs">
-              Empowering the next generation through innovative STEM education. Associated with IIT Bombay.
+              Empowering the next generation through innovative STEM education. Associated with <span className="text-deep-wine font-semibold">SINE IIT Bombay</span>.
             </p>
           </div>
 
