@@ -46,6 +46,18 @@ import schoolImage1 from '@/assets/school-design-1.jpeg';
 import schoolImage2 from '@/assets/school-design-2.jpeg';
 import schoolImage3 from '@/assets/school-design-3.jpeg';
 import schoolImage4 from '@/assets/school-design-4.jpeg';
+import codingImage1 from '@/assets/coding-design-1.jpeg';
+import codingImage2 from '@/assets/coding-design-2.jpeg';
+import codingImage3 from '@/assets/coding-design-3.jpeg';
+import codingImage4 from '@/assets/coding-design-4.jpeg';
+import droneImage1 from '@/assets/drone-design-1.jpeg';
+import droneImage2 from '@/assets/drone-design-2.jpeg';
+import droneImage3 from '@/assets/drone-design-3.jpeg';
+import droneImage4 from '@/assets/drone-design-4.jpeg';
+import skillsImage1 from '@/assets/skills-design-1.jpeg';
+import skillsImage2 from '@/assets/skills-design-2.jpeg';
+import skillsImage3 from '@/assets/skills-design-3.jpeg';
+import skillsImage4 from '@/assets/skills-design-4.jpeg';
 
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
@@ -232,10 +244,10 @@ export default function ProgramsSection() {
 
         {/* Modal Detail Panel */}
         <Dialog open={!!selectedProgram} onOpenChange={(open) => !open && setSelectedProgram(null)}>
-          <DialogContent className={`${selectedProgram?.id === 'stem' || selectedProgram?.id === 'robotics' || selectedProgram?.id === 'product-design' || selectedProgram?.id === 'ai' || selectedProgram?.id === 'summer' || selectedProgram?.id === 'in-school' ? 'max-w-5xl' : 'max-w-2xl'} max-h-[85vh] overflow-y-auto rounded-2xl border-accent/20 backdrop-blur-sm p-0`}>
+          <DialogContent className={`${['stem', 'robotics', 'product-design', 'ai', 'summer', 'in-school', 'coding', 'drone', 'general-skills'].includes(selectedProgram?.id || '') ? 'max-w-5xl' : 'max-w-2xl'} max-h-[85vh] overflow-y-auto rounded-2xl border-accent/20 backdrop-blur-sm p-0`}>
             {selectedProgram && (() => {
               const Icon = selectedProgram.icon;
-              const hasImages = selectedProgram.id === 'stem' || selectedProgram.id === 'robotics' || selectedProgram.id === 'product-design' || selectedProgram.id === 'ai' || selectedProgram.id === 'summer' || selectedProgram.id === 'in-school';
+              const hasImages = ['stem', 'robotics', 'product-design', 'ai', 'summer', 'in-school', 'coding', 'drone', 'general-skills'].includes(selectedProgram.id);
               const imageMap: Record<string, { src: string; alt: string }[]> = {
                 'stem': [
                   { src: stemImage1, alt: 'Students working on electronics' },
@@ -272,6 +284,24 @@ export default function ProgramsSection() {
                   { src: schoolImage2, alt: 'Students doing robotics in school' },
                   { src: schoolImage3, alt: 'Creative STEM lab activity' },
                   { src: schoolImage4, alt: 'Collaborative school project' },
+                ],
+                'coding': [
+                  { src: codingImage1, alt: 'Kids coding with block-based programming' },
+                  { src: codingImage2, alt: 'Students creating games on laptops' },
+                  { src: codingImage3, alt: 'Collaborative coding session' },
+                  { src: codingImage4, alt: 'Children showing game creations' },
+                ],
+                'drone': [
+                  { src: droneImage1, alt: 'Students assembling a drone' },
+                  { src: droneImage2, alt: 'Kids learning drone parts' },
+                  { src: droneImage3, alt: 'Indoor drone flight testing' },
+                  { src: droneImage4, alt: 'Drone safety and simulator practice' },
+                ],
+                'general-skills': [
+                  { src: skillsImage1, alt: 'Kids presenting projects' },
+                  { src: skillsImage2, alt: 'Group discussion activity' },
+                  { src: skillsImage3, alt: 'Public speaking practice' },
+                  { src: skillsImage4, alt: 'Collaborative brainstorming' },
                 ],
               };
               const sideImages = imageMap[selectedProgram.id] || [];
