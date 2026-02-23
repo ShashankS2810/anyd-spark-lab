@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+
 import { toast } from 'sonner';
 import { supabase } from '@/integrations/supabase/client';
 
@@ -315,15 +315,17 @@ export default function Home() {
 
                     <div className="space-y-2">
                       <Label htmlFor="age">Age</Label>
-                      <Select name="age" required>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select Age Group" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="6-8">6–8 years</SelectItem>
-                          <SelectItem value="9-14">9–14 years</SelectItem>
-                        </SelectContent>
-                      </Select>
+                      <Input
+                        id="age"
+                        name="age"
+                        type="number"
+                        min={3}
+                        max={18}
+                        placeholder="Enter child's age"
+                        required
+                        onInvalid={(e) => (e.target as HTMLInputElement).setCustomValidity('Please enter a valid age.')}
+                        onInput={(e) => (e.target as HTMLInputElement).setCustomValidity('')}
+                      />
                     </div>
 
                     <div className="space-y-2">
