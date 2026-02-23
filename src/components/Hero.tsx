@@ -51,8 +51,14 @@ export function Hero() {
                 muted
                 loop
                 playsInline
-                preload="metadata"
+                preload="auto"
                 className="h-full w-full object-cover"
+                style={{
+                  imageRendering: 'auto',
+                  transform: 'translateZ(0)',
+                  backfaceVisibility: 'hidden',
+                  WebkitBackfaceVisibility: 'hidden',
+                }}
               />
             </div>
             {/* Decorative elements */}
