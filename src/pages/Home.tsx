@@ -142,7 +142,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="h-3.5 w-3.5 text-green-500 flex-shrink-0" strokeWidth={2} />
-                    <span className="font-bold text-[hsl(var(--hero-accent))]">IIT BOMBAY PROFESSORS</span> Designed
+                    <span><span className="font-bold text-[hsl(var(--hero-accent))]">IIT BOMBAY PROFESSORS</span> Designed</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="h-3.5 w-3.5 text-green-500 flex-shrink-0" strokeWidth={2} />
