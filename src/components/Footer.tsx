@@ -75,7 +75,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 text-accent mt-0.5" />
-                <a href="https://maps.google.com/?q=IIT+Bombay+Campus+Powai+Mumbai" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-smooth">IIT Bombay, Powai<br />Mumbai, India</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=6024,+6th+Floor,+Rahul+Bajaj+Building,+SINE,+IIT+Bombay" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-smooth">6024, 6th Floor, Rahul Bajaj Building,<br />AnyD, SINE, IIT Bombay</a>
               </li>
             </ul>
           </div>

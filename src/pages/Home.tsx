@@ -389,10 +389,9 @@ export default function Home() {
                     </div>
                     <div>
                       <div className="font-semibold mb-1">Address</div>
-                      <a href="https://maps.google.com/?q=IIT+Bombay+Campus+Powai+Mumbai+400076" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-smooth">
-                        IIT Bombay Campus<br />
-                        Powai, Mumbai 400076<br />
-                        Maharashtra, India
+                      <a href="https://www.google.com/maps/search/?api=1&query=6024,+6th+Floor,+Rahul+Bajaj+Building,+SINE,+IIT+Bombay" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-smooth">
+                        6024, 6th Floor, Rahul Bajaj Building,<br />
+                        AnyD, SINE, IIT Bombay
                       </a>
                     </div>
                   </div>
