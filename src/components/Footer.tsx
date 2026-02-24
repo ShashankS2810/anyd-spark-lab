@@ -83,7 +83,7 @@ export function Footer() {
 
         <div className="mt-8 border-t border-border pt-8">
           <p className="text-xs text-center text-muted-foreground">
-            &copy; {new Date().getFullYear()} AnyD Materials. All rights reserved. Associated with IIT Bombay.
+            &copy; {new Date().getFullYear()} AnyD Materials. All rights reserved. Associated with AnyD Materials SINE IIT Bombay.
           </p>
         </div>
       </div>
